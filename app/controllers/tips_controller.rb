@@ -23,6 +23,23 @@ class TipsController < ApplicationController
     end
   end
 
+  def edit
+    set_tip
+  end
+
+  def update
+    set_tip
+    respond_to do |format|
+      if @tip.update(tip_params)
+        format.html { redirect_to tips_path, notice: "#{@tip.title} was successfully updated." }
+        format.json { render :index, status: :ok, location: tips_path }
+      else
+        format.html { render :edit }
+        format.json { render json: @tip.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 private
 
   def tip_params
