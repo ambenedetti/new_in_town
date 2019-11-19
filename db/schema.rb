@@ -85,10 +85,9 @@ ActiveRecord::Schema.define(version: 2019_11_19_174455) do
 
   create_table "user_cities", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "city_id"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["city_id"], name: "index_user_cities_on_city_id"
     t.index ["user_id"], name: "index_user_cities_on_user_id"
   end
 
@@ -128,7 +127,6 @@ ActiveRecord::Schema.define(version: 2019_11_19_174455) do
   add_foreign_key "tips", "categories"
   add_foreign_key "tips", "questions"
   add_foreign_key "tips", "users"
-  add_foreign_key "user_cities", "cities"
   add_foreign_key "user_cities", "users"
   add_foreign_key "votes", "tips"
   add_foreign_key "votes", "users"
