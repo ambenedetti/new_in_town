@@ -8,7 +8,9 @@
   <p class="m-1"><%= tip.content %></p>
   <div class="bottom-card d-flex justify-content-between">
     <p>by <strong><%= tip.user.username %></strong> | <%= time_ago_in_words(tip.created_at)%> ago</p>
-    <i class="far fa-flag"></i>
+    <%= link_to new_tip_report_path(tip) do %>
+      <i class="far fa-flag"></i>
+    <% end %>
   </div>
 </div>
 <% end %>
