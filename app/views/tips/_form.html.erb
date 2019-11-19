@@ -1,0 +1,18 @@
+<div class="form">
+  <%= simple_form_for @tip do |f| %>
+  <% if @tip.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @tip.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.input :city %>
+    <%= f.association :category %>
+    <%= f.button :submit, class: 'submit-button'  %>
+  <% end %>
+</div>

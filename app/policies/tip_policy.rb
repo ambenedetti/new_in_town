@@ -8,4 +8,13 @@ class TipPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def edit?
+    record.user == user
+  end
+
+  def update?
+    record.user == user
+  end
+
 end

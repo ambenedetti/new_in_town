@@ -4,12 +4,48 @@ class TipsController < ApplicationController
   def index
     @tips = policy_scope(Tip)
     @user_votes = current_user.votes
+
+  end
+
+  def new
+    @tip = Tip.new
+    authorize @tip
+  end
+
+  def create
+    @tip = Tip.new(tip_params)
+    authorize @tip
+    @tip.user = current_user
+    @tip.status = 0
+    @tip.category = Category.find(params[:tip][:category_id])
+    if @tip.save
+      redirect_to tips_path
+    else
+      render :new
+    end
+  end
+
+  def edit
+    set_tip
+  end
+
+  def update
+    set_tip
+    respond_to do |format|
+      if @tip.update(tip_params)
+        format.html { redirect_to tips_path, notice: "#{@tip.title} was successfully updated." }
+        format.json { render :index, status: :ok, location: tips_path }
+      else
+        format.html { render :edit }
+        format.json { render json: @tip.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
 private
 
   def tip_params
-    params.require(:tip).permit(:content, :city, :title, :latitude, :longitude, :status)
+    params.require(:tip).permit(:content, :city, :title, :latitude, :longitude, :status, :category)
   end
 
   def set_tip
