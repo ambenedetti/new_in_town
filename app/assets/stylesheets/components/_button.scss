@@ -1,0 +1,24 @@
+/* Button */
+.main-button {
+position: absolute;
+width: 263px;
+height: 72px;
+left: 56px;
+top: 877px;
+border-radius: 20px;
+color: white;
+background-color: transparent;
+border: 2px solid $purple;
+}
+
+.purple-button {
+position: absolute;
+width: 262px;
+height: 68px;
+left: 59px;
+top: 367px;
+border-radius: 20px;
+background-color: $purple;
+color: white;
+}
+
