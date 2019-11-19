@@ -1,7 +1,7 @@
 class Tip < ApplicationRecord
   belongs_to :category
   belongs_to :user
-  belongs_to :question
+  belongs_to :question, optional: true
   has_many :votes
   has_many :reports
   validates :title, presence: true
