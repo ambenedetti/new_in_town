@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
 User.destroy_all
 Question.destroy_all
 Tip.destroy_all
@@ -17,8 +20,8 @@ puts 'Creating reasons'
 reasons = ["Discriminatory", "Vulgar and/or offensive", "Advertisement", "Not true"]
 
 reasons.each do |reason|
-  Reason.create(name: reason)
-  puts reason.name
+  ex = Reason.create!(name: reason)
+  puts ex.name
 end
 
 puts 'Creating categories'
@@ -26,8 +29,8 @@ puts 'Creating categories'
 categories = ["Sex & relationships", "Transportation", "Food", "Night life", "Work", "Sports", "Culture", "Pets", "Utilities", "Children"]
 
 categories.each do |category|
-  Category.create(name: category)
-  puts category.name
+  cat = Category.create!(name: category)
+  puts cat.name
 end
 
 
@@ -57,8 +60,8 @@ if Rails.env.development?
 
   15.times do
     tip = Tip.create!(
-      title: Faker::TvShows::Friends.character,
-      content: Faker::TvShows::Friends.quote,
+      title: Faker::TvShows::ParksAndRec.character,
+      content: Faker::TvShows::HowIMetYourMother.quote,
       city: "Paris",
       longitude: 2.349014,
       latitude: 48.864716,
@@ -78,8 +81,8 @@ if Rails.env.development?
 
   30.times do
     tip = Tip.create!(
-      title: Faker::TvShows::Friends.character,
-      content: Faker::TvShows::Friends.quote,
+      title: Faker::TvShows::ParksAndRec.character,
+      content: Faker::TvShows::HowIMetYourMother.quote,
       city: "Paris",
       longitude: 2.349014,
       latitude: 48.864716,
@@ -118,4 +121,6 @@ if Rails.env.development?
 
     puts question.title
   end
+
+  puts "Finished seeding"
 end
