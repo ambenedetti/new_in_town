@@ -3,6 +3,8 @@ class TipsController < ApplicationController
 
   def index
     @tips = policy_scope(Tip)
+    @user_votes = current_user.votes
+
   end
 
   def new

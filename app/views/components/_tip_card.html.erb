@@ -1,0 +1,17 @@
+<!-- tip_card.html.erb -->
+<% @tips.each_with_index do |tip, index| %>
+<div class="card-tip m-3 p-2">
+  <div class="top-card d-flex justify-content-between">
+    <p><strong><%= index + 1 %> | <%= tip.title %></strong></p>
+    <%= render 'components/votes', tip: tip, user_votes: @user_votes %>
+  </div>
+  <p class="m-1"><%= tip.content %></p>
+  <div class="bottom-card d-flex justify-content-between">
+    <p>by <strong><%= tip.user.username %></strong> | <%= time_ago_in_words(tip.created_at)%> ago</p>
+    <%= link_to new_tip_report_path(tip) do %>
+      <i class="far fa-flag"></i>
+    <% end %>
+  </div>
+</div>
+<% end %>
+

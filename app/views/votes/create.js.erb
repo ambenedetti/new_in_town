@@ -1,0 +1,3 @@
+var container = document.getElementById("tip_votes_<%= @tip.id %>");
+
+container.innerHTML = "<%= escape_javascript(render 'components/votes', user_votes: @user_votes, tip: @tip) %>";
