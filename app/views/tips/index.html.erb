@@ -1,4 +1,3 @@
-<% @tips.each do |tip| %>
-<p><%= tip.title %></p>
-<% end %>
+<% @alltips = @tips %>
 
+<%= render "components/tip_card"%>
