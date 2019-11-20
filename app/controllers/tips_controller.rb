@@ -2,11 +2,14 @@ class TipsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :search]
 
   def index
-    @tips = policy_scope(Tip)
-
-    # if user_signed_in?
-    #   @user_votes = current_user.votes
-    # end
+    cookies[:guest] ||= SecureRandom.hex(10)
+    @tips = policy_scope(Tip).includes(:votes).includes(:user)
+    @reports = @tips.reports
+    if user_signed_in?
+      @user_votes = current_user.votes.load
+    else
+      @user_votes = Vote.where(guest: cookies[:guest]).load
+    end
   end
 
   def new
