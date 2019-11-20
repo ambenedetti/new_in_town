@@ -1,3 +1,19 @@
 
 <%= render "components/tip_card"%>
+  <main class="search-container">
+    <div class="left-panel">
+      <div id="categories"></div>
+    </div>
+    <div class="right-panel">
+      <div id="searchbox"></div>
+      <div id="stats"></div>
+      <div id="hits"></div>
+      <div id="pagination"></div>
+    </div>
+  </main>
+
+<% @tips.each do |tip| %>
+<p> <%= tip.title %></p>
+<p> <%= tip.content %></p>
+<% end %>
 

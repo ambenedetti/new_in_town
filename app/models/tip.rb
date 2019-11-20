@@ -1,4 +1,5 @@
 class Tip < ApplicationRecord
+  include AlgoliaSearch
   belongs_to :category
   belongs_to :user
   belongs_to :question, optional: true
@@ -9,4 +10,8 @@ class Tip < ApplicationRecord
   validates :city, presence: true
   validates :category, presence: true
   enum status: [ :accepted, :flagged, :reviewed, :hidden]
+
+  algoliasearch do
+    attributes :title, :content, :city, :category, :user
+  end
 end
