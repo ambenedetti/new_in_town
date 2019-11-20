@@ -9,5 +9,4 @@ class Tip < ApplicationRecord
   validates :city, presence: true
   validates :category, presence: true
   enum status: [ :accepted, :flagged, :reviewed, :hidden]
-
 end

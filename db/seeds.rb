@@ -6,40 +6,44 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'faker'
+puts 'Deleting everything...'
+puts '------------------'
 
 User.destroy_all
 Question.destroy_all
 Tip.destroy_all
 Reason.destroy_all
 Category.destroy_all
-
+UserCity.destroy_all
 
 puts 'Creating reasons'
+puts '------------------'
 
 reasons = ["Discriminatory", "Vulgar and/or offensive", "Advertisement", "Not true"]
 
 reasons.each do |reason|
   ex = Reason.create!(name: reason)
-  puts ex.name
+  puts "- #{ex.name}"
 end
 
 puts 'Creating categories'
+puts '------------------'
 
 categories = ["Sex & relationships", "Transportation", "Food", "Night life", "Work", "Sports", "Culture", "Pets", "Utilities", "Children"]
 
 categories.each do |category|
   cat = Category.create!(name: category)
-  puts cat.name
+  puts "- #{cat.name}"
 end
 
 
 if Rails.env.development?
   puts 'Creating a user1'
+  puts '------------------'
 
-  user1 = User.create(email: "barney@stinson.org", password: "password", first_name: "Barney", last_name: "Stinson", username: "The Barnacle", cities: ["Madrid", "Paris"])
+  user1 = User.create!(email: "barney@stinson.org", password: "password", first_name: "Barney", last_name: "Stinson", username: "The Barnacle")
 
-  puts 'Creating 15 fake tips for Barney in Madrid...'
+  puts 'Adding 15 fake tips for Barney in Madrid...'
 
   15.times do
     tip = Tip.create!(
@@ -53,10 +57,25 @@ if Rails.env.development?
       category: Category.all.sample
     )
 
-    puts tip.title
+    puts "+ #{tip.title}"
   end
 
-  puts 'Creating 15 fake tips for Barney in Paris...'
+  puts 'Adding 10 fake questions for Barney...'
+
+  10.times do
+    question = Question.create!(
+      title: Faker::TvShows::HowIMetYourMother.catch_phrase,
+      city: "Paris",
+      status: 0,
+      category: Category.all.sample,
+      user: user1
+    )
+
+    puts "? #{question.title}"
+  end
+
+
+  puts 'Adding 15 fake tips for Barney in Paris...'
 
   15.times do
     tip = Tip.create!(
@@ -70,14 +89,15 @@ if Rails.env.development?
       category: Category.all.sample
     )
 
-    puts tip.title
+    puts "+ #{tip.title}"
   end
 
   puts 'Creating user2'
+  puts '------------------'
 
-  user2 = User.create(email: "ted@mosby.org", password: "password", first_name: "Ted", last_name: "Mosby", username: "The sexless in-keeper", cities: ["Paris"])
+  user2 = User.create!(email: "ted@mosby.org", password: "password", first_name: "Ted", last_name: "Mosby", username: "The sexless in-keeper")
 
-  puts 'Creating 30 fake tips for Ted in Paris...'
+  puts 'Adding 30 fake tips for Ted in Paris...'
 
   30.times do
     tip = Tip.create!(
@@ -91,21 +111,7 @@ if Rails.env.development?
       category: Category.all.sample
     )
 
-    puts tip.title
-  end
-
-  puts 'Creating 10 fake questions for Barney...'
-
-  10.times do
-    question = Question.create!(
-      title: Faker::TvShows::HowIMetYourMother.catch_phrase,
-      city: "Paris",
-      status: 0,
-      category: Category.all.sample,
-      user: user1
-    )
-
-    puts question.title
+    puts "+ #{tip.title}"
   end
 
   puts 'Creating 10 fake questions for Ted...'
@@ -119,8 +125,20 @@ if Rails.env.development?
       user: user2
     )
 
-    puts question.title
+    puts "? #{question.title}"
   end
 
-  puts "Finished seeding"
+  puts 'Creating 3 User cities'
+  puts '------------------'
+
+  city_madrid = UserCity.create!(user_id: 1, name: 'Madrid')
+  city_paris = UserCity.create!(user_id: 1, name: 'Paris')
+  city_london = UserCity.create!(user_id: 2, name: 'London')
+
+  puts "> #{city_madrid.name}"
+  puts "> #{city_london.name}"
+  puts "> #{city_paris.name}"
+
+
+  puts "Finished seeding!!!"
 end
