@@ -1,1 +1,6 @@
 <!-- new.html.erb -->
+<%= simple_form_for [@tip, @report] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :reason %>
+  <%= f.button :submit %>
+<% end %>
