@@ -4,9 +4,9 @@ class TipsController < ApplicationController
   def index
     @tips = policy_scope(Tip)
 
-    if user_signed_in?
-      @user_votes = current_user.votes
-    end
+    # if user_signed_in?
+    #   @user_votes = current_user.votes
+    # end
   end
 
   def new

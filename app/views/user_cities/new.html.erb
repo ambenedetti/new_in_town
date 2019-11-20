@@ -1,0 +1,14 @@
+<%= simple_form_for @user_city do |f| %>
+  <%= f.input :name %>
+  <div class="form-actions">
+    <%= f.button :submit, "Create Profile" %>
+  </div>
+<% end %>
+
+<ul id="results">
+  <li class='list-city'></li>
+</ul>
+
+<form id="selected">
+
+</form>
