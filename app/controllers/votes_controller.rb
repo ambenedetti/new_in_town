@@ -1,7 +1,11 @@
 class VotesController < ApplicationController
   def create
     @tip = Tip.find(params[:tip_id])
+    if
     @user_votes = current_user.votes
+  else
+
+  end
     existing = current_user.votes.find_by(tip: @tip)
     if existing
       authorize existing
