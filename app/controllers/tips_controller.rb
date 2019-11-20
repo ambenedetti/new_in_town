@@ -4,6 +4,7 @@ class TipsController < ApplicationController
   def index
     cookies[:guest] ||= SecureRandom.hex(10)
     @tips = policy_scope(Tip).includes(:votes).includes(:user)
+    @reports = @tips.reports
     if user_signed_in?
       @user_votes = current_user.votes.load
     else
