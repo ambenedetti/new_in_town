@@ -1,0 +1,19 @@
+
+.category-card{
+  background-image: linear-gradient(to left, $purple, #7f0ea6);
+  color: white;
+  border-radius: 10px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.category-card img{
+  width: 50px;
+  padding: 5px 0 5px 15px;
+}
+
+.category-card-text{
+  flex-grow: 1;
+  color: white;
+}

@@ -30,11 +30,12 @@ puts 'Creating categories'
 puts '------------------'
 
 categories = ["Sex & relationships", "Transportation", "Food", "Night life", "Work", "Sports", "Culture", "Pets", "Utilities", "Children"]
-
-categories.each do |category|
-  cat = Category.create!(name: category)
+categories.each_with_index do |category, index|
+  cat = Category.create!(name: category, image:"icon-#{index}.svg")
   puts "- #{cat.name}"
 end
+
+
 
 
 if Rails.env.development?
