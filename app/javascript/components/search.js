@@ -5,7 +5,9 @@ const button = document.querySelector(".search-btn");
 if (button) {
   button.addEventListener("click", (event) => {
     event.preventDefault();
-    const searchQuery = document.querySelector(".form-control").value
+    const searchTip = document.getElementById("query").value
+    const searchCity = document.getElementById("query-city").value
+    const searchQuery = `${searchTip} ${searchCity}`
     search(searchQuery);
   });
 };
@@ -26,8 +28,3 @@ const search = (searchQuery) => {
 }
 
 export { search };
-
-
-
-
-

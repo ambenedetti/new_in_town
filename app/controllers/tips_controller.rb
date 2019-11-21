@@ -7,7 +7,6 @@ class TipsController < ApplicationController
     @categories = Category.all
     @tips = policy_scope(Tip).includes(:votes).includes(:user)
     @tips = @tips.where(id: tip_ids) if tip_ids.any?
-
     if user_signed_in?
       @user_votes = current_user.votes.load
     else
