@@ -104,11 +104,12 @@ ActiveRecord::Schema.define(version: 2019_11_21_123500) do
   create_table "votes", force: :cascade do |t|
     t.integer "direction"
     t.bigint "tip_id"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "guest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tip_id"], name: "index_votes_on_tip_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
   add_foreign_key "ignored_questions", "questions"
@@ -123,4 +124,5 @@ ActiveRecord::Schema.define(version: 2019_11_21_123500) do
   add_foreign_key "tips", "users"
   add_foreign_key "user_cities", "users"
   add_foreign_key "votes", "tips"
+  add_foreign_key "votes", "users"
 end

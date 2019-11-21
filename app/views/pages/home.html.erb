@@ -7,6 +7,7 @@
       <%= image_tag "logo_white.png" %>
     </div>
 
+
     <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
     <%= f.input :Location, :label => false, input_html: {value: "Madrid", id: "query-city"} %>
     <%= f.input :name, :label => false, input_html: {value: "Search for a tip", id: "query"} %>

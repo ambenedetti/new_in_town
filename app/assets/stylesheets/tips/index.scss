@@ -1,0 +1,39 @@
+.index-tips {
+  justify-content: center;
+}
+
+.search-index {
+  justify-content: center;
+  margin-top: 20px;
+
+}
+.input-search {
+  height: 40px;
+  border-radius: 4px 0px 0px 4px;
+}
+
+.index-search-btn {
+  background: linear-gradient(180deg, #CB3DFB 0%, #8100AC 100%);
+  border-radius: 0px 4px 4px 0px;
+  border-width: 0px;
+  height: 40px;
+  width: 40px;
+  color: white;
+}
+.nav{
+  flex-wrap: nowrap;
+  overflow: scroll;
+  border-bottom: 1px solid $purple;
+  margin-top: 18px;
+  margin-bottom: 24px;
+}
+li .active {
+  border-bottom: 3px solid $purple;
+}
+.nav-item a {
+  color: $purple;
+}
+.nav-tabs .nav-link {
+  border: none;
+  flex-wrap: nowrap;
+}

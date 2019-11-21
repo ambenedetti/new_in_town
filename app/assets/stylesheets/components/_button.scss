@@ -9,6 +9,20 @@ color: white;
 background-color: transparent;
 border: 2px solid $purple;
 }
+.main-button-form {
+width: 100%;
+height: 72px;
+color: white;
+background-color: $preto;
+position: fixed;
+left: 0;
+bottom: 0;
+}
+
+.main-button-form:hover {
+  color: $purple;
+  background-color: white;
+}
 
 .purple-button {
 width: 262px;
