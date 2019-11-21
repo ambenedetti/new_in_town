@@ -1,6 +1,6 @@
 /* Button */
 .main-button {
-position: absolute;
+position: relative;
 width: 263px;
 height: 72px;
 left: 56px;
@@ -12,7 +12,7 @@ border: 2px solid $purple;
 }
 
 .purple-button {
-position: absolute;
+position: relative;
 width: 262px;
 height: 68px;
 left: 59px;
