@@ -1,4 +1,15 @@
 /* Button */
+.main-button {
+position: relative;
+width: 263px;
+height: 72px;
+left: 56px;
+top: 877px;
+border-radius: 20px;
+color: white;
+background-color: transparent;
+border: 2px solid $purple;
+}
 .main-button-form {
 width: 100%;
 height: 72px;
