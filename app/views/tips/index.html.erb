@@ -1,19 +1,25 @@
+<div class="index-tips">
+  <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
+<div class="d-flex search-index">
+    <%= f.input :search, input_html: { value: params[:search], class: 'input-search' }, :label => false %>
+     <%= button_tag(type: 'submit', class: "search-btn index-search-btn") do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+</div>
+  <% end %>
+
+<div class="category-filter d-flex ">
+  <% button_to All, tips_path, method: :get, params: {:search} %>
+  <% raise %>
+    <% @categories.each do |category| %>
+     <%= button_to category.name, tips_path, method: :get, params: { category: category}, class: "category-tab" %>
+    <% end %>
+</div>
+
+<% if params[:search].present? %>
+<p> results for <%= params[:search] %></p>
+<% end %>
 
 <%= render "components/tip_card"%>
-  <main class="search-container">
-    <div class="left-panel">
-      <div id="categories"></div>
-    </div>
-    <div class="right-panel">
-      <div id="searchbox"></div>
-      <div id="stats"></div>
-      <div id="hits"></div>
-      <div id="pagination"></div>
-    </div>
-  </main>
-
-<% @tips.each do |tip| %>
-<p> <%= tip.title %></p>
-<p> <%= tip.content %></p>
-<% end %>
+</div>
 

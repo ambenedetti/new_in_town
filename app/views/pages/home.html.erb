@@ -2,12 +2,8 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 
   <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-  <%= f.input :name, input_html: {value: ""} %>
-  <%= f.submit "Search", class: "btn btn-primary search-btn" %>
-<% end %>
-
-<ul id="testing">
-
-</ul>
+    <%= f.input :name, input_html: {value: ""} %>
+    <%= f.submit "Search", class: "btn btn-primary search-btn" %>
+  <% end %>
 
 
