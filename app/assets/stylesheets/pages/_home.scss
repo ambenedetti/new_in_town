@@ -1,1 +1,35 @@
 // Specific CSS for your home-page
+.container-landing {
+  background-image: asset-url("background_landing.png");
+  height: 100vh;
+  background-size: cover;
+}
+
+.search-container{
+  display: block;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.home-image img {
+  width: 70vw;
+  margin: auto;
+}
+.center-text{
+  text-align: center;
+  color: $preto;
+}
+
+.category-card-container {
+
+}
+
+.categories-box{
+  margin-top: 100px;
+}
+
+.category-text{
+  margin-top: 50px;
+  margin-bottom: 0;
+}
