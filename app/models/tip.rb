@@ -8,7 +8,6 @@ class Tip < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true, length: { maximum: 500 }
   validates :city, presence: true
-  validates :category, presence: true
   enum status: [ :accepted, :flagged, :reviewed, :hidden]
 
   algoliasearch do
