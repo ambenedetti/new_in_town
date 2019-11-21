@@ -1,6 +1,9 @@
 .card-tip {
   border-bottom: 1px solid $purple;
 }
+.hidden {
+  margin-bottom: 0px;
+}
 .votes-up {
   border: 1px solid $purple;
   border-radius: 17px  0px  0px 17px;
@@ -25,9 +28,11 @@ p {
   background-color: $purple;
   color: white;
 }
+.disabled {
+  opacity: 0.6;
+}
 a .report {
   color: $preto;
-
 }
 a .report:hover {
   color: $purple;

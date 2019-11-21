@@ -3,38 +3,24 @@ import algoliasearch from 'algoliasearch'
 const button = document.querySelector(".search-btn");
 
 if (button) {
-button.addEventListener("click", (event) => {
-  event.preventDefault();
-  const searchQuery = document.querySelector(".form-control").value
-  console.log(searchQuery)
-  search(searchQuery);
-});
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    const searchTip = document.getElementById("query").value
+    const searchCity = document.getElementById("query-city").value
+    const searchQuery = `${searchTip} ${searchCity}`
+    search(searchQuery);
+  });
 };
 
-
 const search = (searchQuery) => {
-  var d1 = document.getElementById('testing');
-  var client = algoliasearch('AIJNIWQWRP', '36c3e937288c0d983a00bf1b4f4fe435');
+  const client = algoliasearch('AIJNIWQWRP', '36c3e937288c0d983a00bf1b4f4fe435');
 
-  var index = client.initIndex('Tip');
-  index.search(searchQuery, { hitsPerPage: 10, page: 0 })
-  .then(function searchDone(result) {
-    result.hits.forEach((result, index) => {
-      const tag = `<div class="card-tip m-3 p-2">
-                    <div class="top-card d-flex justify-content-between">
-                      <p><strong>${index + 1} | ${result.title}</strong></p>
-                    </div>
-                    <p class="m-1">${result.content}</p>
-                    <div class="bottom-card d-flex justify-content-between">
-                      <p>by <strong>${result.user.username}</strong> | about 4 hours ago</p>
-                      <a href="/tips/${result.user.id}/reports/new">
-                        <i class="far fa-flag"></i>
-                      </a>
-                      </div>
-                  </div>`
-      d1.insertAdjacentHTML('beforeend', tag);
+  const index = client.initIndex('Tip');
 
-    })
+  index.search(searchQuery, { hitsPerPage: 20, page: 0 })
+  .then(result => {
+    const tipIds = result.hits.map(result => result.objectID);
+    window.location.replace(`/tips?ids=${tipIds}&search=${searchQuery}`);
   })
   .catch(function searchFailure(err) {
     console.error(err);
@@ -42,8 +28,3 @@ const search = (searchQuery) => {
 }
 
 export { search };
-
-
-
-
-

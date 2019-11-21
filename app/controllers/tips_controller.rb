@@ -3,8 +3,10 @@ class TipsController < ApplicationController
 
   def index
     cookies[:guest] ||= SecureRandom.hex(10)
+    tip_ids = params[:ids]&.split(',') || []
+    @categories = Category.all
     @tips = policy_scope(Tip).includes(:votes).includes(:user)
-    @reports = @tips.reports
+    @tips = @tips.where(id: tip_ids) if tip_ids.any?
     if user_signed_in?
       @user_votes = current_user.votes.load
     else
