@@ -51,3 +51,19 @@
       border: none !important;
   }
 }
+
+.question_city {
+  position: relative;
+}
+
+#results {
+  position: absolute;
+    top: 34px;
+    left: 0;
+  max-height: 180px;
+  width: 100%;
+  overflow: scroll;
+  background: white;
+  list-style-type: none;
+  border-color: gray;
+  }

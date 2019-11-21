@@ -11,6 +11,7 @@ gem 'redis'
 gem 'pundit'
 gem 'faker'
 gem "algoliasearch-rails"
+gem 'algolia-places-rails', '~> 1.16', '>= 1.16.4'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
