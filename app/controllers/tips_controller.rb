@@ -24,7 +24,6 @@ class TipsController < ApplicationController
     authorize @tip
     @tip.user = current_user
     @tip.status = 0
-    @tip.category = Category.find(params[:tip][:category_id])
     if @tip.save
       redirect_to tips_path
     else
@@ -52,7 +51,7 @@ class TipsController < ApplicationController
 private
 
   def tip_params
-    params.require(:tip).permit(:content, :city, :title, :latitude, :longitude, :status, :category)
+    params.require(:tip).permit(:content, :city, :title, :latitude, :longitude, :status, :category_id)
   end
 
   def set_tip
