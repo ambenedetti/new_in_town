@@ -1,18 +1,9 @@
 <div class="form">
   <%= simple_form_for @tip do |f| %>
-  <% if @tip.errors.any? %>
-      <div class="errors-container">
-        <ul>
-          <% @tip.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-    <%= f.input :title %>
-    <%= f.input :content %>
-    <%= f.input :city %>
-    <%= f.association :category %>
-    <%= f.button :submit, class: 'submit-button'  %>
+    <%= f.input :title, placeholder: 'Title', label: false %>
+    <%= f.text_area :content, placeholder: "Write your tip here...", label: false, class: 'input-form-create' %>
+    <%= f.input :city, placeholder: 'City',label: false %>
+    <%= f.association :category, prompt: "Category",label: false %>
+    <%= f.button :submit, class: 'main-button-form'  %>
   <% end %>
 </div>
