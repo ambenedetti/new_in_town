@@ -7,5 +7,9 @@ const results = document.querySelector("#results");
 const selected = document.querySelector("#selected");
 const button = document.querySelector(".search-btn");
 
+const resultsQ = document.querySelector("#results-question");
+const selectedQ = document.querySelector("#selected");
+const buttonQ = document.querySelector(".search-btn");
+
 initAutocomplete()
 initAutocompleteQuestions()

@@ -25,7 +25,7 @@ class TipsController < ApplicationController
     @tip.user = current_user
     @tip.status = 0
     if @tip.save
-      redirect_to tips_path
+      redirect_to mytips_path
     else
       render :new
     end

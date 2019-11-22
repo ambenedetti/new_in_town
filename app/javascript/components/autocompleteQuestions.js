@@ -9,7 +9,7 @@ const appendInput = () => {
   listCity.forEach((city) => {
     city.addEventListener("click", (event) => {
       const inputTag = `<input id="custId" name="custId" value="${event.target.innerText}">`
-      selected.insertAdjacentHTML("beforeend", inputTag);
+      selectedQ.insertAdjacentHTML("beforeend", inputTag);
     })
   })
 }
@@ -26,7 +26,7 @@ const initAutocompleteQuestions = () => {
       })
         .then(response => response.json())
         .then((data) => {
-          results.innerHTML = ""
+          resultsQ.innerHTML = ""
           data.hits.forEach((data) => {
             if ( data.is_city) {
               const tag = `<li class='list-city-question'>${data.locale_names.default[0]}, ${data.country.default}</li>`

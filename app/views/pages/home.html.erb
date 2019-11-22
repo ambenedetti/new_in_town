@@ -13,8 +13,8 @@
 
 
     <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
-    <%= f.input :Location, :label => false, input_html: {placeholder: "Madrid", id: "query-city"} %>
-    <%= f.input :name, :label => false, input_html: {placeholder: "Search for a tip", id: "query"} %>
+    <%= f.input :Location, :label => false, input_html: {placeholder: "Madrid", id: "query-city", autocomplete: 'off'} %>
+    <%= f.input :name, :label => false, input_html: {placeholder: "Search for a tip", id: "query", autocomplete: 'off'} %>
     <%= f.submit "Search", class: "search-btn p-2 m-2" %>
     <% end %>
     <div class="categories-box">
