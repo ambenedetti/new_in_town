@@ -41,17 +41,17 @@
     position: fixed;
     right: 31px;
     font-size: 24px;
-    opacity: 0;
+    display: none;
     top: 39px;
   }
 }
 
 .dropdown.show {
-  img {
+  button {
       display: none;
   }
   i {
-    opacity: 1;
+    display: block;
   }
 }
 
@@ -64,6 +64,11 @@
     width: 100%;
     position: fixed;
     background: linear-gradient(180deg, $preto, transparent);
-
+    a {
+      color: white !important;
+    }
 }
 
+.dropdown-toggle::after {
+  content: none;
+}

@@ -1,5 +1,7 @@
 import algoliasearch from 'algoliasearch'
 
+
+
 const button = document.querySelector(".search-btn");
 
 if (button) {
@@ -11,7 +13,6 @@ if (button) {
     search(searchQuery);
   });
 };
-
 const search = (searchQuery) => {
   const client = algoliasearch(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_SEARCH_KEY);
   const index = client.initIndex('Tip');
