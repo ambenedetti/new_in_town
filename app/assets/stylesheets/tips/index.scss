@@ -1,7 +1,9 @@
 .index-tips {
   justify-content: center;
 }
-
+#query-city {
+  color: $preto60;
+}
 .search-index {
   justify-content: center;
   margin-top: 20px;
@@ -25,15 +27,26 @@
   overflow: scroll;
   border-bottom: 1px solid $purple;
   margin-top: 18px;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
+  display: -webkit-box;
 }
-li .active {
-  border-bottom: 3px solid $purple;
-}
-.nav-item a {
+.nav-tabs .nav-link.active {
+  border: 0;
+  border-bottom: 3px solid;
+  border-color: $purple;
+  font-weight: bold;
   color: $purple;
 }
+
+.nav-item a {
+  color: $preto60;
+  font-weight: bold;
+}
 .nav-tabs .nav-link {
-  border: none;
   flex-wrap: nowrap;
+}
+.results_for {
+  margin-left: 10px;
+
+  color: $preto60;
 }
