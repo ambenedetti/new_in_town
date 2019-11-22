@@ -1,0 +1,11 @@
+<div class="form">
+  <%= simple_form_for @question do |f| %>
+    <%= f.input :title, placeholder: 'Title', label: false %>
+    <div class="form-group string required question_city">
+      <input class="form-control string required" placeholder="City" type="text" name="question[city]" id="question_city">
+      <ul id="results"><p class='list-city-question'></p></ul>
+    </div>
+    <%= f.association :category, prompt: "Select category",label: false %>
+    <%= f.button :submit, "Post Question", class: 'main-button-form'  %>
+  <% end %>
+</div>
