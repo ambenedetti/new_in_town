@@ -14,6 +14,7 @@ const appendInput = () => {
   })
 }
 
+
 const initAutocomplete = () => {
   const input = document.querySelector('#user_city_name');
  if (!input) {
