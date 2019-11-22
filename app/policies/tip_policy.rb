@@ -16,4 +16,8 @@ class TipPolicy < ApplicationPolicy
   def update?
     record.user == user
   end
+
+  def mytips?
+    true
+  end
 end

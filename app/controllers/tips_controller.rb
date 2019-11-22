@@ -51,8 +51,9 @@ class TipsController < ApplicationController
   def mytips
     @user = current_user
     @tips = Tip.all
+    @user_votes = current_user.votes.load
     @mytips = @tips.where(user: @user.id)
-
+    authorize @mytips
   end
 
 private

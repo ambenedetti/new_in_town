@@ -1,13 +1,2 @@
 
-<% if current_user %>
-  <% render "components/tip_card", tips: @mytips %>
-<% else %>
-  <h2>You need to be signed in</h2>
-<% end %>
-
-
-
-
-
-
-
+<%= render "components/tip_cards", tips: @mytips %>
