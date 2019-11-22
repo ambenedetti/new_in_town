@@ -2,6 +2,7 @@ import algoliasearch from 'algoliasearch'
 
 const button = document.querySelector(".search-btn");
 
+// Find the button
 if (button) {
   button.addEventListener("click", (event) => {
     event.preventDefault();
