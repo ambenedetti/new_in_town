@@ -1,5 +1,5 @@
 AlgoliaSearch.configuration = {
-  application_id: 'AIJNIWQWRP',
-  api_key: 'a7cfa83f71d1f36e234ac0961bd901eb'
+  application_id: ENV['ALGOLIA_APP_ID'],
+  api_key: ENV['ALGOLIA_EVERYTHING_KEY']
 }
 

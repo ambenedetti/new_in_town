@@ -1,5 +1,7 @@
 import algoliasearch from 'algoliasearch'
+
 const button = document.querySelector(".search-btn");
+
 if (button) {
   button.addEventListener("click", (event) => {
     event.preventDefault();
@@ -9,8 +11,9 @@ if (button) {
     search(searchQuery);
   });
 };
+
 const search = (searchQuery) => {
-  const client = algoliasearch('AIJNIWQWRP', '36c3e937288c0d983a00bf1b4f4fe435');
+  const client = algoliasearch(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_SEARCH_KEY);
   const index = client.initIndex('Tip');
   index.search(searchQuery, { hitsPerPage: 20, page: 0 })
   .then(result => {
