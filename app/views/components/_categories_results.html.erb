@@ -1,0 +1,43 @@
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <%= link_to 'All', "#category-all", class: 'active nav-link',
+      id: "category-all-tab", data: { toggle: 'tab' }, role: 'tab',
+      aria: { controls: "category-all", selected: "true" } %>
+  </li>
+
+  <% @categories.each do |category| %>
+    <li class="nav-item">
+      <%= link_to category.name, "#category-#{category.id}", class: 'nav-link',
+        id: "category-#{category.id}-tab", data: { toggle: 'tab' }, role: 'tab',
+        aria: { controls: "category-#{category.id}", selected: "false" } %>
+    </li>
+  <% end %>
+</ul>
+
+<% if params[:search].present? %>
+  <% if @count == 1 %>
+    <p class="results_for"><%= @count %> result for <%= params[:search] %></p>
+  <%else%>
+    <p class="results_for"><%= @count %> results for <%= params[:search] %></p>
+    <% end %>
+<%else%>
+  <% if @count == 1 %>
+    <p class="results_for"><%= @count %> result for Madrid</p>
+  <%else%>
+    <p class="results_for"><%= @count %> results for Madrid</p>
+    <% end %>
+<% end %>
+
+
+
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="category-all" role="tabpanel" aria-labelledby="category-all-tab">
+    <%= render "components/tip_cards", tips: @tips %>
+  </div>
+
+  <% @categories.each do |category| %>
+    <div class="tab-pane fade" id="category-<%= category.id %>" role="tabpanel" aria-labelledby="category-<%= category.id %>-tab">
+      <%= render "components/tip_cards", tips: @tips.where(category: category) %>
+    </div>
+  <% end %>
+</div>

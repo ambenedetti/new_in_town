@@ -7,6 +7,7 @@
         <%= render 'components/votes', tip: tip, user_votes: @user_votes %>
       </div>
       <p class="m-1"><%= tip.content %></p>
+      <p class="city-name"><%= tip.city %></p>
       <div class="bottom-card d-flex justify-content-between">
         <p>by <strong><%= tip.user.username %></strong> | <%= time_ago_in_words(tip.created_at)%> ago</p>
         <% if user_signed_in? %>

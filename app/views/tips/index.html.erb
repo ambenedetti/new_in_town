@@ -2,43 +2,14 @@
   <%= simple_form_for :search, url: root_path, method: :get do |f| %>
     <div class="d-flex search-index">
       <%= f.input :city, as: :hidden, input_html: { autocomplete: 'off', value: params[:search], id: 'query-city'} %>
-      <%= f.input :search, input_html: { autocomplete: 'off', value: params[:search], class: 'input-search', id: 'query' },
+      <%= f.input :search, input_html: { autocomplete: 'off', placeholder: params[:search], class: 'input-search', id: 'query' },
         label: false %>
       <%= button_tag(type: 'submit', class: "search-btn index-search-btn") do %>
         <i class="fas fa-search"></i>
       <% end %>
     </div>
   <% end %>
+  <% @count = @tips.count %>
 
-  <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
-      <%= link_to 'All', "#category-all", class: 'active nav-link',
-        id: "category-all-tab", data: { toggle: 'tab' }, role: 'tab',
-        aria: { controls: "category-all", selected: "true" } %>
-    </li>
-
-    <% @categories.each do |category| %>
-      <li class="nav-item">
-        <%= link_to category.name, "#category-#{category.id}", class: 'nav-link',
-          id: "category-#{category.id}-tab", data: { toggle: 'tab' }, role: 'tab',
-          aria: { controls: "category-#{category.id}", selected: "false" } %>
-      </li>
-    <% end %>
-  </ul>
-
-  <% if params[:search].present? %>
-    <p>results for <%= params[:search] %></p>
-  <% end %>
-
-  <div class="tab-content">
-    <div class="tab-pane fade show active" id="category-all" role="tabpanel" aria-labelledby="category-all-tab">
-      <%= render "components/tip_cards", tips: @tips %>
-    </div>
-
-    <% @categories.each do |category| %>
-      <div class="tab-pane fade" id="category-<%= category.id %>" role="tabpanel" aria-labelledby="category-<%= category.id %>-tab">
-        <%= render "components/tip_cards", tips: @tips.where(category: category) %>
-      </div>
-    <% end %>
-  </div>
+<%= render "components/categories_results", tips: @tips, count: @count  %>
 </div>
