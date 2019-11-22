@@ -46,6 +46,13 @@ class TipsController < ApplicationController
     end
   end
 
+  def mytips
+    @user = current_user
+    @tips = Tip.all
+    @mytips = @tips.where(user: @user.id)
+
+  end
+
 private
 
   def tip_params
