@@ -1,19 +1,15 @@
-
-<%= render "components/tip_card"%>
-  <main class="search-container">
-    <div class="left-panel">
-      <div id="categories"></div>
+<div class="index-tips">
+  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <div class="d-flex search-index">
+      <%= f.input :city, as: :hidden, input_html: { autocomplete: 'off', value: params[:search], id: 'query-city'} %>
+      <%= f.input :search, input_html: { autocomplete: 'off', placeholder: params[:search], class: 'input-search', id: 'query' },
+        label: false %>
+      <%= button_tag(type: 'submit', class: "search-btn index-search-btn") do %>
+        <i class="fas fa-search"></i>
+      <% end %>
     </div>
-    <div class="right-panel">
-      <div id="searchbox"></div>
-      <div id="stats"></div>
-      <div id="hits"></div>
-      <div id="pagination"></div>
-    </div>
-  </main>
+  <% end %>
+  <% @count = @tips.count %>
 
-<% @tips.each do |tip| %>
-<p> <%= tip.title %></p>
-<p> <%= tip.content %></p>
-<% end %>
-
+<%= render "components/categories_results", tips: @tips, count: @count  %>
+</div>

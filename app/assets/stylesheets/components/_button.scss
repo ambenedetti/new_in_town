@@ -1,6 +1,5 @@
 /* Button */
 .main-button {
-position: relative;
 width: 263px;
 height: 72px;
 left: 56px;
@@ -34,4 +33,13 @@ border-radius: 20px;
 background-color: $purple;
 color: white;
 }
+.search-btn {
+color: $white;
+border: 2px solid $white;
+background-color: transparent;
+border-radius: 10px;
+box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+width: 50vw;
+}
+
 

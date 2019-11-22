@@ -1,0 +1,52 @@
+.index-tips {
+  justify-content: center;
+}
+#query-city {
+  color: $preto60;
+}
+.search-index {
+  justify-content: center;
+  margin-top: 20px;
+
+}
+.input-search {
+  height: 40px;
+  border-radius: 4px 0px 0px 4px;
+}
+
+.index-search-btn {
+  background: linear-gradient(180deg, #CB3DFB 0%, #8100AC 100%);
+  border-radius: 0px 4px 4px 0px;
+  border-width: 0px;
+  height: 40px;
+  width: 40px;
+  color: white;
+}
+.nav{
+  flex-wrap: nowrap;
+  overflow: scroll;
+  border-bottom: 1px solid $purple;
+  margin-top: 18px;
+  margin-bottom: 12px;
+  display: -webkit-box;
+}
+.nav-tabs .nav-link.active {
+  border: 0;
+  border-bottom: 3px solid;
+  border-color: $purple;
+  font-weight: bold;
+  color: $purple;
+}
+
+.nav-item a {
+  color: $preto60;
+  font-weight: bold;
+}
+.nav-tabs .nav-link {
+  flex-wrap: nowrap;
+}
+.results_for {
+  margin-left: 10px;
+
+  color: $preto60;
+}

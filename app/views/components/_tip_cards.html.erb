@@ -1,0 +1,28 @@
+<!-- tip_card.html.erb -->
+<% if tips.any? %>
+  <% tips.each_with_index do |tip, index| %>
+    <div class="card-tip m-3 p-2">
+      <div class="top-card d-flex justify-content-between">
+        <p><strong><%= index + 1 %> | <%= tip.title %></strong></p>
+        <%= render 'components/votes', tip: tip, user_votes: @user_votes %>
+      </div>
+      <p class="m-1"><%= tip.content %></p>
+      <p class="city-name"><%= tip.city %></p>
+      <div class="bottom-card d-flex justify-content-between">
+        <p>by <strong><%= tip.user.username %></strong> | <%= time_ago_in_words(tip.created_at)%> ago</p>
+        <% if user_signed_in? %>
+          <% if current_user.reports.any? {|r| r[:tip_id] == tip.id} %>
+            <i class="fas fa-flag report"></i>
+          <% else %>
+            <%= link_to new_tip_report_path(tip) do %>
+              <i class="far fa-flag report"></i>
+            <% end %>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div>No results for <%= params[:search] %> in this category</div>
+<% end %>
+

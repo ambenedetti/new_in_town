@@ -1,5 +1,5 @@
 <!-- _votes.html.erb -->
-<div id="tip_votes_<%= tip.id %>" class="d-flex justify-content-between">
+<div class="votes d-flex justify-content-between tip_votes_<%= tip.id %>">
   <%= simple_form_for [tip, Vote.new], remote: true do |f| %>
     <%= f.input :direction, as: :hidden, input_html: { value: 'up'} %>
     <%= up_vote_button(tip, user_votes) %>

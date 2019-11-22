@@ -1,13 +1,29 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container-landing">
+  <div class="search-container p-2">
+    <div class="center-text">
+      <div class="intro">
+        <div class="intro-text">
+          <p>Learn to navigate a new city avoiding all awkwardness instantly with the help of tips from locals.</p>
+        </div>
+      </div>
+    <div class="home-image">
+      <%= image_tag "logo_white.png" %>
+    </div>
+    <h2 class="tag-line">Feel like a local</h2>
 
-  <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-  <%= f.input :name, input_html: {value: ""} %>
-  <%= f.submit "Search", class: "btn btn-primary search-btn" %>
-<% end %>
 
-<ul id="testing">
-
-</ul>
-
+    <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
+    <%= f.input :Location, :label => false, input_html: {placeholder: "Madrid", id: "query-city"} %>
+    <%= f.input :name, :label => false, input_html: {placeholder: "Search for a tip", id: "query"} %>
+    <%= f.submit "Search", class: "search-btn p-2 m-2" %>
+    <% end %>
+    <div class="categories-box">
+      <p class="category-text">Or choose a category:</p>
+      <div class="category-card-container">
+        <%= render 'components/category_card' %>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
 

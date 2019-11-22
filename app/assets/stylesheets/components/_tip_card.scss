@@ -1,6 +1,9 @@
 .card-tip {
   border-bottom: 1px solid $purple;
 }
+.hidden {
+  margin-bottom: 0px;
+}
 .votes-up {
   border: 1px solid $purple;
   border-radius: 17px  0px  0px 17px;
@@ -15,9 +18,16 @@
   height: 26px;
   padding: 0px 10px;
 }
+.city-name {
+  color: $purple;
+  opacity: 0.6;
+  margin-bottom: 0px;
+  margin-top: 12px;
+}
 p {
   color: $preto;
 }
+
 .bottom-card p {
   opacity: 0.6;
 }
@@ -25,9 +35,11 @@ p {
   background-color: $purple;
   color: white;
 }
+.disabled {
+  opacity: 0.6;
+}
 a .report {
   color: $preto;
-
 }
 a .report:hover {
   color: $purple;
