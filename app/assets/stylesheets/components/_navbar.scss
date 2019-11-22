@@ -2,6 +2,8 @@
   color: white;
   justify-content: space-between;
   background: $preto;
+  position: sticky;
+  top: 0px;
 }
 .user_navbar {
   color: white;
@@ -63,7 +65,8 @@
     left: auto;
     width: 100%;
     position: fixed;
-    background: linear-gradient(180deg, $preto, transparent);
+    border: none;
+    background: linear-gradient(180deg, $preto 0%, transparent 100%);
     a {
       color: white !important;
     }
