@@ -1,14 +1,21 @@
-<%= simple_form_for @user_city do |f| %>
-  <%= f.input :name %>
-  <div class="form-actions">
-    <%= f.button :submit, "Create Profile" %>
-  </div>
-<% end %>
+<div class="form-container">
+  <h1>Add city</h1>
+  <p>Please add at least one city where you've lived in for a prolonged period of time</p>
+  <div class="form">
+  <%= simple_form_for @user_city do |f| %>
+   <%= f.input :name, placeholder: 'City', label: false %>
+    <div class="form-actions">
+      <%= f.button :submit, "Add city", class: 'white-button' %>
+    </div>
+  <% end %>
 
-<ul id="results">
+  </div>
+</div>
+
+<!-- <ul id="results">
   <li class='list-city'></li>
 </ul>
 
 <form id="selected">
 
-</form>
+</form> -->
