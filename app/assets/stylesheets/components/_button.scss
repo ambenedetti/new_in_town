@@ -9,6 +9,7 @@ color: white;
 background-color: transparent;
 border: 2px solid $purple;
 }
+
 .main-button-form {
 width: 100%;
 height: 72px;
@@ -42,4 +43,31 @@ box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 width: 50vw;
 }
 
+.white-button {
+width: 40%;
+margin-left: 30%;
+margin-right: 30%;
+border-radius: 20px;
+color: white;
+background-color: transparent;
+border: 2px solid white;
+}
 
+.sign-up-button {
+  border-radius: 20px;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 40%;
+  text-align: center;
+  text-decoration: none;
+}
+
+.sign-up-button:hover {
+  color: $purple;
+  background-color: white;
+  text-decoration: none;
+}
