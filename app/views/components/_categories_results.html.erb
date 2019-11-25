@@ -14,6 +14,15 @@
   <% end %>
 </ul>
 
+<div class="scroll">
+  <div class="scroll-left">
+    <i class="fas fa-angle-left"></i>
+  </div>
+  <div class="scroll-right arrow-active">
+    <i class="fas fa-angle-right"></i>
+  </div>
+</div>
+
 <% if params[:search].present? %>
   <% if @count == 1 %>
     <p class="results_for">1 result for <%= params[:search] %></p>

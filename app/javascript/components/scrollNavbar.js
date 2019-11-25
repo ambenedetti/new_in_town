@@ -1,7 +1,6 @@
 const navbar = document.querySelector(".nav");
 
 navbar.addEventListener("scroll", (event) => {
-    console.log(event.target.scrollLeft);
     const arrowRight = document.querySelector(".scroll-right");
     const arrowLeft = document.querySelector(".scroll-left");
     const scrollPosition = event.target.scrolllLeft;
@@ -14,8 +13,6 @@ navbar.addEventListener("scroll", (event) => {
       } else if (event.target.scrollLeft <= 630){
         arrowRight.classList.add("arrow-active");
       };
-
-
 });
 
 

@@ -1,8 +1,14 @@
 .card-tip {
   border-bottom: 1px solid $purple;
+  position: relative;
 }
 .hidden {
   margin-bottom: 0px;
+}
+.votes {
+  position: relative;
+  right: 0px;
+  bottom: -5px;
 }
 .votes-up {
   border: 1px solid $purple;
@@ -27,9 +33,12 @@
 p {
   color: $preto;
 }
-
+.tip-title {
+  font-size: 24px;
+  font-weight: bold;
+}
 .bottom-card p {
-  opacity: 0.6;
+  opacity: $preto60;
 }
 .selected {
   background-color: $purple;
