@@ -36,6 +36,32 @@
   }
 }
 
+.current-cities {
+  list-style: none;
+  display: grid;
+  text-align: center;
+  grid-template-columns: 1fr;
+  padding: 0;
+  li {
+    border: solid 1px white;
+    padding: 10px;
+    color: white;
+    /* width: 100%; */
+    border-radius: 6px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  .disabled {
+    color: $preto60;
+  }
+}
+
 .new_user_city {
   .form-control {
      background-color: #fff;
