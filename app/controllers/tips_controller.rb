@@ -19,6 +19,8 @@ class TipsController < ApplicationController
   def new
     @tip = Tip.new
     authorize @tip
+
+    @question = Question.find_by(id: params[:question_id])
   end
 
   def create
@@ -26,6 +28,14 @@ class TipsController < ApplicationController
     authorize @tip
     @tip.user = current_user
     @tip.status = 0
+    @question = Question.find_by(id: params[:question_id])
+
+    if @question.present?
+      @tip.question = @question
+      @tip.category = @question.category
+      @tip.city = @question.city
+    end
+
     if @tip.save
       redirect_to mytips_path
     else

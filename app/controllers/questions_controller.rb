@@ -2,12 +2,8 @@ class QuestionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    if user_signed_in?
-    @user = current_user
     @user_questions = policy_scope(Question).includes(:user)
-    @user_questions = @user.questions
-    @answer_questions = Question.where.not(user_id: @user.id)
-    end
+    @answer_questions = current_user.questions_to_answer
   end
 
   def new

@@ -1,21 +1,21 @@
-<% if current_user.cities.length > 0 %>
-<% current_user.cities.each do |city| %>
+<% questions.group_by(&:city).each do |city, questions| %>
+  <div class="question-city-name">
+    <p class="other-city-name"><%= city %></p>
+  </div>
 
-<div class="question-city-name">
-<p class="other-city-name"><%= city.name %></p>
-</div>
-  <% @answer_questions.where(city: city.name).each_with_index do |question, index| %>
+  <% questions.each do |question| %>
     <div class="card-tip m-3 p-2">
       <div class="top-card d-flex justify-content-between">
-        <p><strong><%= index + 1 %> | <%= question.title %></strong></p>
+        <p><strong><%= question.title %></strong></p>
       </div>
-      <div class="question-actions d-flex justify-content-around">
-        <p> <%= link_to 'answer', new_tip_path(@question), class: "answer-button" %> </p> <p> <%= link_to 'Ignore', class: "ignore-link" %></p>
-      </div>
+
+
       <div class="bottom-card d-flex justify-content-between">
         <p>by <strong><%= question.user.username %></strong> | <%= time_ago_in_words(question.created_at)%> ago</p>
       </div>
-      </div>
-      <% end %>
-      <% end %>
+    </div>
+    <div class="question-actions d-flex justify-content-around">
+      <p> <%= link_to 'answer', new_question_tip_path(question), class: "answer-button" %> </p> <p> <%= link_to 'Ignore', class: "ignore-link" %></p>
+    </div>
+  <% end %>
 <% end %>

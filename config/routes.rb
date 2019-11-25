@@ -6,7 +6,11 @@ Rails.application.routes.draw do
     resources :reports, only: [:new, :create]
     resources :votes, only: [:new, :create, :destroy]
   end
-  resources :questions, only: [:new, :create, :index]
+
+  resources :questions, only: [:new, :create, :index, :show] do
+    resources :tips, only: [:new, :create]
+  end
+
   get 'mytips', to: 'tips#mytips', as: "mytips"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
