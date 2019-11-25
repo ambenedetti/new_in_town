@@ -2,6 +2,7 @@ import "bootstrap"
 import { search } from '../components/search'
 import { initAutocomplete } from '../components/autocomplete'
 import { initAutocompleteQuestions } from '../components/autocompleteQuestions'
+import { initAutocompleteTips } from '../components/autocompleteTips';
 import { initScroll } from '../components/scrollNavbar'
 
 const results = document.querySelector("#results");
@@ -11,3 +12,4 @@ const button = document.querySelector(".search-btn");
 initAutocomplete()
 initScroll()
 initAutocompleteQuestions()
+initAutocompleteTips()

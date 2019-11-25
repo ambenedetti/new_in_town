@@ -1,48 +1,81 @@
 // Specific CSS for your home-page
 .container-landing {
-  background-image: asset-url("background_landing.png");
-  height: 100vh;
+  background-image: asset-url("shopping_woman.png");
+  height: 320px;
   background-size: cover;
 }
+
 .tag-line {
   color: white;
   margin-bottom: 24px;
   font-size: 26px;
 }
+
 .search-container{
   display: block;
   justify-content: center;
   align-items: center;
 }
-.home-image img {
-  width: 85vw;
-  margin: auto;
+
+.home-image {
+  height: 340px;
+  img {
+    position: relative;
+    width: 222px;
+    height: 222px;
+    left: 37px;
+    z-index: -2;
+    top: 22px;
+  }
 }
+
+.category-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card-home-section .category-card-text {
+  color: #0000008a;
+}
+
+.container-landing {
+  form {
+    padding: 21px 20px;
+  }
+  input {
+    font-size: 23px;
+  }
+
+  .search-btn {
+    width: 100%;
+    border-radius: 4px;
+    background: #a81fd5;
+    padding: 9px;
+    color: white;
+    border: 0;
+  }
+}
+
 .center-text{
   text-align: center;
   color: $preto;
 }
+
 .intro {
   display: flex;
   justify-content: center;
 }
+
 .intro-text {
   margin-top: 5px;
   margin-left: 0px;
   width: 72vw;
   justify-text: center;
-
 }
 
-.category-card-container {
-
-}
-
-.categories-box{
-  margin-top: 54px;
-}
 
 .category-text{
-  margin-top: 32px;
-  margin-bottom: 0;
+      margin-bottom: 33px;
+    margin-top: 12px;
+    font-size: 26px;
 }
