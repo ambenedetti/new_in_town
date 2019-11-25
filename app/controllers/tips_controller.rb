@@ -7,11 +7,13 @@ class TipsController < ApplicationController
     @categories = Category.all
     @tips = policy_scope(Tip).includes(:votes).includes(:user)
     @tips = @tips.where(id: tip_ids) if tip_ids.any?
+    @tips = @tips.order(upvote_count: :desc)
     if user_signed_in?
       @user_votes = current_user.votes.load
     else
       @user_votes = Vote.where(guest: cookies[:guest]).load
     end
+    @count = @tips.count
   end
 
   def new
@@ -25,7 +27,7 @@ class TipsController < ApplicationController
     @tip.user = current_user
     @tip.status = 0
     if @tip.save
-      redirect_to tips_path
+      redirect_to mytips_path
     else
       render :new
     end
@@ -54,6 +56,7 @@ class TipsController < ApplicationController
     @user_votes = current_user.votes.load
     @mytips = @tips.where(user: @user.id)
     authorize @mytips
+    @mytips = @mytips.order('created_at DESC')
   end
 
 private

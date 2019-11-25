@@ -1,4 +1,5 @@
 class UserCitiesController < ApplicationController
+
     def index
     if user_signed_in?
     @user = current_user
@@ -8,6 +9,10 @@ class UserCitiesController < ApplicationController
   end
 
   def new
+    @user = current_user
+    if @user.cities.length > 0
+      @cities = @user.cities
+    end
     @user_city = UserCity.new
     authorize @user_city
   end
@@ -19,8 +24,17 @@ class UserCitiesController < ApplicationController
     if @user_city.save
       redirect_to new_user_city_path
     else
-      render :new
+      redirect_to new_user_city_path
+      flash[:alert] = "Type and select a new city"
     end
+  end
+
+  def destroy
+    @user_city = UserCity.find(params[:id])
+    @user = current_user
+    @user_city.destroy
+    authorize @user_city
+    redirect_to new_user_city_path
   end
 
   private
