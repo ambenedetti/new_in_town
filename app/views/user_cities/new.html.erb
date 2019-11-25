@@ -1,21 +1,31 @@
 <div class="form-container">
-  <h1>Add city</h1>
-  <p>Please add at least one city where you've lived in for a prolonged period of time</p>
+  <h1>Your cities</h1>
+  <p>Add cities where you could give advice on</p>
   <div class="form">
-  <%= simple_form_for @user_city do |f| %>
-   <%= f.input :name, placeholder: 'City', label: false %>
+    <%= simple_form_for @user_city do |f| %>
+    <%= f.input :name, placeholder: 'City', label: false %>
     <div class="form-actions">
       <%= f.button :submit, "Add city", class: 'white-button' %>
     </div>
-  <% end %>
-
+    <% end %>
+    <br>
+  <% if @cities %>
+    <p>These are your cities:</p>
+    <ul class='current-cities'>
+      <% @cities.each do |city|  %>
+      <li><%= city.name.split(',')[0] %>
+        <%= link_to(city, method: :delete) do %>
+          <i class="fas fa-times"></i>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
   </div>
+    <%= link_to questions_path do %>
+      <button class="main-button-form">Done</button>
+    <% end %>
+  <% else %>
+   <button class="main-button-form disabled" >Add one city to continue</button>
+  <% end %>
 </div>
 
-<!-- <ul id="results">
-  <li class='list-city'></li>
-</ul>
-
-<form id="selected">
-
-</form> -->
