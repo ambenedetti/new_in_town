@@ -4,8 +4,9 @@ class QuestionsController < ApplicationController
   def index
     if user_signed_in?
     @user = current_user
-    @questions = policy_scope(Question).includes(:user)
-    @questions = @user.questions
+    @user_questions = policy_scope(Question).includes(:user)
+    @user_questions = @user.questions
+    @answer_questions = Question.where.not(user_id: @user.id)
     end
   end
 
