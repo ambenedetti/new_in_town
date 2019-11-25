@@ -6,6 +6,14 @@
   top: 0px;
 }
 
+.navbar-home {
+  color: $preto;
+  justify-content: space-between;
+  background: white;
+  position: sticky;
+  top: 0px;
+}
+
 .user_navbar {
   color: white;
   font-weight: bold;
@@ -34,7 +42,7 @@
 
 .link-text {
   text-decoration: none;
-  color: white;
+  color: $purple;
 }
 
 .dropdown-item {
@@ -82,3 +90,38 @@
 .dropdown-toggle::after {
   content: none;
 }
+
+
+.hamburger-container {
+  display: inline-block;
+}
+
+.bar1.change {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  transform: rotate(-45deg) translate(-9px, 6px) ;
+
+}
+
+/* Fade out the second bar */
+.bar2.change {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change.bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+  transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: $purple;
+  margin: 6px 0;
+  transition: 0.4s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+

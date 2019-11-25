@@ -1,0 +1,38 @@
+.nav{
+  flex-wrap: nowrap;
+  overflow: scroll;
+  border-bottom: 1px solid $purple;
+  margin-top: 18px;
+  margin-bottom: 12px;
+  display: -webkit-box;
+}
+.nav-tabs .nav-link.active {
+  border: 0;
+  border-bottom: 3px solid;
+  border-color: $purple;
+  font-weight: bold;
+  color: $purple;
+}
+.nav-item a {
+  color: $preto60;
+  font-weight: bold;
+}
+.nav-tabs .nav-link {
+  flex-wrap: nowrap;
+}
+.scroll {
+  margin-left: 6px;
+  margin-right: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+.scroll-right {
+  color: transparent;
+}
+.scroll-left {
+  color: transparent;
+}
+.arrow-active {
+  color: $preto60;
+  font-size: 18px;
+}

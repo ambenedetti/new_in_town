@@ -1,0 +1,13 @@
+<% if params[:search].present? %>
+  <% if @count == 1 %>
+    <p class="results_for">1 result for <%= params[:search] %></p>
+  <%else%>
+    <p class="results_for"><%= @count %> results for <%= params[:search] %></p>
+  <% end %>
+<%else%>
+  <% if @count == 1 %>
+    <p class="results_for">1 result for Madrid</p>
+  <%else%>
+    <p class="results_for"><%= @count %> results for Madrid</p>
+  <% end %>
+<% end %>
