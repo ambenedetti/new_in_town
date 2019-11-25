@@ -6,12 +6,14 @@
     <div class="home-image">
       <%= image_tag "Ellipse.png" %>
     </div>
-    <h1>Live. Ask. Adapt.</h1>
+
+    <h2 class="tag-line">Feel like a local</h2>
 
     <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
-    <%= f.input :Location, :label => false, input_html: {placeholder: "Search a city...", id: "query-city"} %>
-    <%= f.input :name, :label => false, input_html: {placeholder: "Search for a tip...", id: "query"} %>
-    <%= f.submit "Find Answers", class: "search-btn" %>
+    <%= f.input :location, label: false, input_html: { placeholder: "Madrid", id: "query-city" } %>
+    <%= f.input :name, label: false, input_html: { placeholder: "Search for a tip", id: "query" } %>
+    <%= f.submit "Search", class: "search-btn p-2 m-2" %>
+
     <% end %>
     <div class="see-more">
       <i class="fas fa-chevron-down"></i>

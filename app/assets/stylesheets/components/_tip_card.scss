@@ -4,6 +4,9 @@
 .hidden {
   margin-bottom: 0px;
 }
+.votes {
+  justify-content: flex-end;
+}
 .votes-up {
   border: 1px solid $purple;
   border-radius: 17px  0px  0px 17px;
@@ -27,9 +30,17 @@
 p {
   color: $preto;
 }
-
+.tip-index {
+  color: $preto60;
+  font-size: 24px;
+  font-weight: bold;
+}
+.tip-title {
+  font-size: 24px;
+  font-weight: bold;
+}
 .bottom-card p {
-  opacity: 0.6;
+  opacity: $preto60;
 }
 .selected {
   background-color: $purple;
