@@ -1,14 +1,11 @@
 .card-tip {
   border-bottom: 1px solid $purple;
-  position: relative;
 }
 .hidden {
   margin-bottom: 0px;
 }
 .votes {
-  position: relative;
-  right: 0px;
-  bottom: -5px;
+  justify-content: flex-end;
 }
 .votes-up {
   border: 1px solid $purple;
@@ -32,6 +29,11 @@
 }
 p {
   color: $preto;
+}
+.tip-index {
+  color: $preto60;
+  font-size: 24px;
+  font-weight: bold;
 }
 .tip-title {
   font-size: 24px;
