@@ -9,6 +9,10 @@ class QuestionPolicy < ApplicationPolicy
     true
   end
 
+  def ignore?
+    true
+  end
+
   def edit?
     record.user == user
   end

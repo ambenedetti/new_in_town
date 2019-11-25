@@ -9,7 +9,8 @@ const results = document.querySelector("#results");
 const selected = document.querySelector("#selected");
 const button = document.querySelector(".search-btn");
 
-initAutocomplete()
-initScroll()
-initAutocompleteQuestions()
-initAutocompleteTips()
+
+initAutocomplete();
+initScroll();
+initAutocompleteQuestions();
+initAutocompleteTips();

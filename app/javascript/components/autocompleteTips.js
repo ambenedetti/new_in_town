@@ -1,9 +1,9 @@
 import places from 'places.js';
 
 const initAutocompleteTips = () => {
-  const addressInput = document.getElementById('tip_city');
-  if (addressInput) {
-    places({ container: addressInput });
+  const addressTipInput = document.getElementById('tip_city');
+  if (addressTipInput) {
+    places({ container: addressTipInput });
   }
 };
 

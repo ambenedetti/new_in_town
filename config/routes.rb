@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :questions, only: [:new, :create, :index, :show] do
     resources :tips, only: [:new, :create]
   end
-
+  post 'questions/:id/ignore', to: 'questions#ignore', as: "ignore"
   get 'mytips', to: 'tips#mytips', as: "mytips"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

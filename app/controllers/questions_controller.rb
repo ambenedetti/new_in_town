@@ -40,6 +40,12 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def ignore
+    set_question
+    @question.ignored!
+    save @question
+  end
+
 private
 
   def question_params
