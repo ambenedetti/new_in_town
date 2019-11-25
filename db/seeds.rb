@@ -33,7 +33,7 @@ end
 puts 'Creating categories'
 puts '------------------'
 
-categories = ["Sex & relationships", "Transportation", "Food", "Going out", "Work", "Sports", "Culture", "Pets", "Utilities", "Children"]
+categories = ["Culture", "Transportation", "Food", "Going out", "Work", "Sports", "Sex & relationships", "Pets", "Utilities", "Children"]
 categories.each_with_index do |category, index|
   cat = Category.create!(name: category, image:"icon-#{index}.svg")
   puts "- #{cat.name}"
