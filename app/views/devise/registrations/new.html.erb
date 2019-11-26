@@ -1,6 +1,6 @@
 <div class="form-container">
   <div class="form form-devise-sing-in">
-    <h1 style="padding-bottom: 13px;">Sign up</h1>
+    <h1 style="padding-bottom: 13px;">Create your account</h1>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -12,8 +12,8 @@
                 input_html: { autocomplete: "email" }, placeholder: 'Email', label: false  %>
     <%= f.input :password,
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" }, placeholder: 'Password', label: false   %>
+    <%= f.hint  "Make sure it's at least #{@minimum_password_length} characters", wrap_with: { tag: :span, class: :hint } %>
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" }, placeholder: 'Confirm password', label: false   %>
@@ -25,9 +25,6 @@
   </div>
 <% end %>
 
-<%- if controller_name != 'sessions' %>
-  <%= link_to "Sign in", new_session_path(resource_name), :class => "sign-up-text" %><br />
-<% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <%= link_to "Sign up", new_registration_path(resource_name), :class => "sign-up-text" %><br />
@@ -46,6 +43,7 @@
     <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
   <% end %>
 <% end %>
+
 
 </div>
 </div>

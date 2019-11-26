@@ -1,10 +1,10 @@
 <% @categories.each do |category| %>
 <div class="card-home-section">
-  <div class="category-card d-flex m-2">
-    <%= image_tag category.image %>
-  </div>
-    <div class="category-card-text">
-    <%= category.name %>
+  <div class="category-card m-2">
+    <div>
+      <%= image_tag category.image %><br>
+      <%= category.name %>
     </div>
+  </div>
 </div>
 <% end %>
