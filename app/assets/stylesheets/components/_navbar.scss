@@ -53,7 +53,7 @@
 
 .dropdown {
   list-style: none;
-  color: white;
+  color: $purple;
    i {
     position: fixed;
     right: 31px;
@@ -73,7 +73,6 @@
 }
 
 .dropdown-menu {
-    right: 0;
     top: 94px;
     height: 100vh;
     margin: 0;
@@ -81,9 +80,9 @@
     width: 100%;
     position: fixed;
     border: none;
-    background: linear-gradient(180deg, $preto 0%, transparent 100%);
+    background: linear-gradient(270deg, white 0%, #ffffffd6 100%);
     a {
-      color: white !important;
+      color: $preto !important;
     }
 }
 
