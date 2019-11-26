@@ -26,7 +26,9 @@ class TipsController < ApplicationController
     authorize @tip
     @tip.user = current_user
     @tip.status = 0
-    if @tip.save
+    if filter_hateful_language
+      render :new
+    elsif @tip.save
       redirect_to mytips_path
     else
       render :new
@@ -57,6 +59,13 @@ class TipsController < ApplicationController
     @mytips = @tips.where(user: @user.id)
     authorize @mytips
     @mytips = @mytips.order('created_at DESC')
+  end
+
+  def filter_hateful_language
+       profanity_filter = LanguageFilter::Filter.new matchlist: :profanity
+    if profanity_filter.match? @tip.content then
+      flash[:alert] = "You cannot use this language"
+    end
   end
 
 private
