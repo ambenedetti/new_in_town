@@ -2,12 +2,12 @@
 <% if tips.any? %>
   <% tips.each_with_index do |tip, index| %>
     <div class="card-tip m-3 p-2">
-      <div class="top-card d-flex justify-content-end">
-        <%= render 'components/votes', tip: tip, user_votes: @user_votes %>
-      </div>
+      <div class="top-card d-flex justify-content-between align-items-start">
         <p class="tip-index"><%= index + 1 %> | </p>
-        <p class="tip-title"><%= tip.title %></p>
-      <p class="m-1"><%= tip.content %></p>
+        <%= render 'components/votes', tip: tip %>
+      </div>
+      <p class="tip-title"><%= tip.title %></p>
+      <p class="m-1 tip-content"><%= tip.content %></p>
       <p class="city-name"><%= tip.city %></p>
       <div class="bottom-card d-flex justify-content-between">
         <p>by <strong><%= tip.user.username %></strong> | <%= time_ago_in_words(tip.created_at)%> ago</p>
@@ -18,7 +18,7 @@
             <%= link_to new_tip_report_path(tip) do %>
               <i class="far fa-flag report"></i>
             <% end %>
-        <% end %>
+           <% end %>
         <% end %>
       </div>
     </div>

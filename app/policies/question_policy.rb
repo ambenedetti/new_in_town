@@ -1,11 +1,19 @@
 class QuestionPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      user.questions
     end
   end
 
   def create?
+    true
+  end
+
+  def ignore?
+    true
+  end
+
+  def show?
     true
   end
 

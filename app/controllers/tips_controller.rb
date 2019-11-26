@@ -8,17 +8,15 @@ class TipsController < ApplicationController
     @tips = policy_scope(Tip).includes(:votes).includes(:user)
     @tips = @tips.where(id: tip_ids) if tip_ids.any?
     @tips = @tips.order(upvote_count: :desc)
-    if user_signed_in?
-      @user_votes = current_user.votes.load
-    else
-      @user_votes = Vote.where(guest: cookies[:guest]).load
-    end
+
     @count = @tips.count
   end
 
   def new
     @tip = Tip.new
     authorize @tip
+
+    @question = Question.find_by(id: params[:question_id])
   end
 
   def create
@@ -26,7 +24,17 @@ class TipsController < ApplicationController
     authorize @tip
     @tip.user = current_user
     @tip.status = 0
-    if @tip.save
+    @question = Question.find_by(id: params[:question_id])
+    if @question.present?
+      @tip.question = @question
+      @tip.category = @question.category
+      @tip.city = @question.city
+      @question.answered!
+    end
+    if filter_hateful_language
+      render :new
+    elsif @tip.save
+
       redirect_to mytips_path
     else
       render :new
@@ -53,10 +61,16 @@ class TipsController < ApplicationController
   def mytips
     @user = current_user
     @tips = Tip.all
-    @user_votes = current_user.votes.load
     @mytips = @tips.where(user: @user.id)
     authorize @mytips
     @mytips = @mytips.order('created_at DESC')
+  end
+
+  def filter_hateful_language
+       profanity_filter = LanguageFilter::Filter.new matchlist: :profanity
+    if profanity_filter.match? @tip.content then
+      flash[:alert] = "You cannot use this language"
+    end
   end
 
 private

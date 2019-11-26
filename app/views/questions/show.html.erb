@@ -1,0 +1,13 @@
+<div class="card-tip m-3 p-2">
+  <div class="top-card">
+    <p class="my-question-title"><%= @question.title %></p>
+    <p class="other-city-name"><%= @question.city %></p>
+  </div>
+  <div class="bottom-card">
+    <p class="time-created"><%= time_ago_in_words(@question.created_at)%> ago</p>
+  </div>
+</div>
+
+<%= render "components/tip_cards", tips: @question.tips %>
+
+<%= link_to 'Back to questions', questions_path, class: "back-to-link"%>

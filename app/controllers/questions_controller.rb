@@ -2,12 +2,10 @@ class QuestionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    if user_signed_in?
-    @user = current_user
+    current_user.update(unread_questions: 0)
     @user_questions = policy_scope(Question).includes(:user)
-    @user_questions = @user.questions
-    @answer_questions = Question.where.not(user_id: @user.id)
-    end
+    @answer_questions = current_user.questions_to_answer.where(status: 'open')
+    @answer_questions = @answer_questions.order(created_at: :desc)
   end
 
   def new
@@ -20,11 +18,17 @@ class QuestionsController < ApplicationController
     authorize @question
     @question.user = current_user
     @question.status = 0
+    user_ids = UserCity.where(name: params[:city]).pluck(&:user_id)
+    User.increment_counter(:unread_count, user_ids)
     if @question.save
       redirect_to questions_path
     else
       render :new
     end
+  end
+
+  def show
+    set_question
   end
 
   def edit
@@ -42,6 +46,12 @@ class QuestionsController < ApplicationController
         format.json { render json: @question.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def ignore
+    set_question
+    @question.ignored!
+    redirect_to questions_path
   end
 
 private

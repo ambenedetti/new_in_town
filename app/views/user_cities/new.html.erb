@@ -3,10 +3,10 @@
   <p>Add cities where you could give advice on</p>
   <div class="form">
     <%= simple_form_for @user_city do |f| %>
-    <%= f.input :name, placeholder: 'City', label: false %>
-    <div class="form-actions">
-      <%= f.button :submit, "Add city", class: 'white-button' %>
-    </div>
+      <%= f.input :name, placeholder: 'City', label: false, class: 'places-search' %>
+      <div class="form-actions">
+        <%= f.button :submit, "Add city", class: 'white-button' %>
+      </div>
     <% end %>
     <br>
   <% if @cities %>
