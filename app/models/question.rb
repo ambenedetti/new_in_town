@@ -4,5 +4,6 @@ class Question < ApplicationRecord
   validates :title, presence: true
   validates :city, presence: true
   validates :category, presence: true
-  enum status: [:open, :ignored, :seen]
+  has_many :tips
+  enum status: [:open, :ignored, :seen, :answered]
 end

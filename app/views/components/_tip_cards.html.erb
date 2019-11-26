@@ -3,7 +3,7 @@
   <% tips.each_with_index do |tip, index| %>
     <div class="card-tip m-3 p-2">
       <div class="top-card d-flex justify-content-end">
-        <%= render 'components/votes', tip: tip, user_votes: @user_votes %>
+        <%= render 'components/votes', tip: tip %>
       </div>
       <p class="tip-index"><%= index + 1 %> | </p>
       <p class="tip-title"><%= tip.title %></p>

@@ -8,7 +8,17 @@ class ApplicationController < ActionController::Base
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
+  helper_method :user_votes
+
   private
+
+  def user_votes
+    if user_signed_in?
+      current_user.votes
+    else
+      Vote.where(guest: cookies[:guest])
+    end
+  end
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/

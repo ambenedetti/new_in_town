@@ -2,8 +2,9 @@ class QuestionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+    current_user.update(unread_questions: 0)
     @user_questions = policy_scope(Question).includes(:user)
-    @answer_questions = current_user.questions_to_answer.where.not(status: 'ignored')
+    @answer_questions = current_user.questions_to_answer.where(status: 'open')
     @answer_questions = @answer_questions.order(created_at: :desc)
   end
 
@@ -17,6 +18,8 @@ class QuestionsController < ApplicationController
     authorize @question
     @question.user = current_user
     @question.status = 0
+    user_ids = UserCity.where(name: params[:city]).pluck(&:user_id)
+    User.increment_counter(:unread_count, user_ids)
     if @question.save
       redirect_to questions_path
     else
@@ -26,8 +29,6 @@ class QuestionsController < ApplicationController
 
   def show
     set_question
-    @question_tips = Tip.all.where(question: @question)
-    @answer_count = @question_tips.count
   end
 
   def edit
