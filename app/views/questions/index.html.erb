@@ -11,9 +11,6 @@
     <%= render "components/questions_cards", questions: @answer_questions %>
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <% @user_questions.each do |question| %>
-      <p><%= question.title %></p>
-    <% end %>
+    <%= render "components/my_questions_cards", questions: @user_questions %>
   </div>
-
 </div>

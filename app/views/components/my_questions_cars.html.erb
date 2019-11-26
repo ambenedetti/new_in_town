@@ -1,0 +1,15 @@
+<% questions.each do |question| %>
+  <div class="card-tip m-3 p-2">
+    <div class="question-actions d-flex justify-content-between">
+      <%= link_to 'See Tips', question_path(question), class: "answer-button" %>
+    </div>
+    <div class="top-card d-flex justify-content-between">
+      <p class="question-title"><%= question.title %></p>
+    </div>
+    <div class="bottom-card d-flex justify-content-between">
+      <p><%= time_ago_in_words(question.created_at)%> ago</p>
+    </div>
+  </div>
+<% end %>
+
+

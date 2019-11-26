@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
   def index
     @user_questions = policy_scope(Question).includes(:user)
     @answer_questions = current_user.questions_to_answer
+    @answer_questions = @answer_questions.order(status: :asc).order(created_at: :desc)
   end
 
   def new
