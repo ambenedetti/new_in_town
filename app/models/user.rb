@@ -9,4 +9,12 @@ class User < ApplicationRecord
   has_many :reports
   has_many :votes
   has_many :cities, class_name: 'UserCity'
+
+  def city_names
+    cities.pluck(:name)
+  end
+
+  def questions_to_answer
+    Question.where(city: city_names).where.not(user: self)
+  end
 end
