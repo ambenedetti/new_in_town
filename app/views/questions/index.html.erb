@@ -11,6 +11,6 @@
     <%= render "components/questions_cards", questions: @answer_questions %>
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <%= render "components/my_questions_cards", questions: @user_questions %>
+    <%= render "components/my_questions_cards", questions: @user_questions, count: @ %>
   </div>
 </div>

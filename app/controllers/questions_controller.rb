@@ -3,8 +3,8 @@ class QuestionsController < ApplicationController
 
   def index
     @user_questions = policy_scope(Question).includes(:user)
-    @answer_questions = current_user.questions_to_answer
-    @answer_questions = @answer_questions.order(status: :asc).order(created_at: :desc)
+    @answer_questions = current_user.questions_to_answer.where.not(status: 'ignored')
+    @answer_questions = @answer_questions.order(created_at: :desc)
   end
 
   def new
@@ -22,6 +22,12 @@ class QuestionsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    set_question
+    @question_tips = Tip.all.where(question: @question)
+    @answer_count = @question_tips.count
   end
 
   def edit
@@ -44,7 +50,7 @@ class QuestionsController < ApplicationController
   def ignore
     set_question
     @question.ignored!
-    save @question
+    redirect_to questions_path
   end
 
 private

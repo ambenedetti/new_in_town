@@ -13,6 +13,10 @@ class QuestionPolicy < ApplicationPolicy
     true
   end
 
+  def show?
+    true
+  end
+
   def edit?
     record.user == user
   end

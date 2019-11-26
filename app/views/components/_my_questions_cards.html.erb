@@ -6,7 +6,11 @@
     </div>
     <div class="bottom-card d-flex justify-content-between">
       <p class="time-created"><%= time_ago_in_words(question.created_at)%> ago</p>
-      <%= link_to 'See Tips', question_path(question), class: "answer-button question-actions see-tips-btn" %>
+      <% if !@question_tips.nil? %>
+        <%= link_to question_path(question), class: "question-actions " do %>
+          <p class="see-tips-btn answer-button "><%= @answer_count %> tips</p>
+        <% end %>
+      <% end %>
     </div>
   </div>
 <% end %>
