@@ -13,6 +13,11 @@
   }
 }
 
+.links-password {
+  font-size: 15px;
+
+}
+
 .form-container h1, h2 {
   color: white;
   text-align: center;
@@ -63,10 +68,10 @@
 
 .new_user_city {
   .form-control {
-     background-color: #fff;
-      background-clip: padding-box;
-      border-radius: 5px !important;
-      border: none !important;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 5px !important;
+    border: none !important;
   }
 }
 
@@ -111,16 +116,23 @@
   border-color: gray;
   }
 
-.form-inputs {
-  .optional {
-     color: white !important;
-  }
-}
 
 .forgot-password {
   color: white;
+  margin-bottom: 10px;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 15px;
+}
+
+.form-check-label {
+    margin-bottom: 0;
+    color: white;
+}
+
+.sign-up-box {
+    border: solid 1px #ffffff73;
+    padding: 17px;
+    border-radius: 5px;
 }
 
 .forgot-password:hover {

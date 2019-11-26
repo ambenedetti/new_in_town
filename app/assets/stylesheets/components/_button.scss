@@ -1,23 +1,23 @@
 /* Button */
 .main-button {
-width: 263px;
-height: 72px;
-left: 56px;
-top: 877px;
-border-radius: 20px;
-color: white;
-background-color: transparent;
-border: 2px solid $purple;
+  width: 263px;
+  height: 72px;
+  left: 56px;
+  top: 877px;
+  border-radius: 20px;
+  color: white;
+  background-color: transparent;
+  border: 2px solid $purple;
 }
 
 .main-button-form {
-width: 100%;
-height: 72px;
-color: white;
-background-color: $preto;
-position: fixed;
-left: 0;
-bottom: 0;
+  width: 100%;
+  height: 72px;
+  color: white;
+  background-color: $preto;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 
 .main-button-form:hover {
@@ -26,31 +26,32 @@ bottom: 0;
 }
 
 .purple-button {
-width: 262px;
-height: 68px;
-left: 59px;
-top: 367px;
-border-radius: 20px;
-background-color: $purple;
-color: white;
+  width: 262px;
+  height: 68px;
+  left: 59px;
+  top: 367px;
+  border-radius: 20px;
+  background-color: $purple;
+  color: white;
 }
+
 .search-btn {
-color: $purple;
-border: 2px solid $purple;
-background-color: transparent;
-border-radius: 10px;
-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-width: 50vw;
+  color: $purple;
+  border: 2px solid $purple;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  width: 50vw;
 }
 
 .white-button {
-width: 40%;
-margin-left: 30%;
-margin-right: 30%;
-border-radius: 20px;
-color: white;
-background-color: transparent;
-border: 2px solid white;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 20px;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
 }
 
 .sign-up-button {

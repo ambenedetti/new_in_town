@@ -7,19 +7,44 @@
                     required: false,
                     autofocus: true,
                     input_html: { autocomplete: "email" }, placeholder: 'Email', label: false %>
+        <div class="w-100 text-left d-flex">
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "Forgot your password?", new_password_path(resource_name), :class => "forgot-password w-100 text-right" %><br />
+          <% end %>
+        </div>
         <%= f.input :password,
                      required: false,
                     input_html: { autocomplete: "current-password" }, placeholder: 'Password', label: false  %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
+        <div class="links-password d-flex flex-column">
+          <%- if controller_name != 'sessions' %>
+            <%= link_to "Sign in", new_session_path(resource_name), :class => "sign-up-text" %><br />
+          <% end %>
+          <div class="sign-up-box">
+            <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+              <p>New In Town?<%= link_to "Sign up here", new_registration_path(resource_name), :class => "sign-up-text" %></p>
+            <% end %>
+          </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Sign in", class: 'main-button-form' %>
-      </div>
-    <% end %>
-    <div class="links-password d-flex flex-column">
-      <%= render "devise/shared/links" %>
+          <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+            <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+          <% end %>
+
+          <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+            <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
+          <% end %>
+
+          <%- if devise_mapping.omniauthable? %>
+            <%- resource_class.omniauth_providers.each do |provider| %>
+              <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+            <% end %>
+          <% end %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Sign in", class: 'main-button-form' %>
+        </div>
+          <% end %>
       </div>
     </div>
-  </div>
 </div>
