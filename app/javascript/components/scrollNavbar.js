@@ -6,7 +6,7 @@ const initScroll = () => {
   }
 
   navbar.addEventListener("scroll", (event) => {
-      console.log("test");
+
       const arrowRight = document.querySelector(".scroll-right");
       const arrowLeft = document.querySelector(".scroll-left");
       const scrollPosition = event.target.scrolllLeft;
