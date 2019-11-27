@@ -5,7 +5,14 @@ const initAutocomplete = () => {
   if (addressInput) {
     const placesAutocomplete = places({ container: addressInput }).configure({
       type: 'city',
-      aroundLatLngViaIP: true
+      aroundLatLngViaIP: true,
+      language: 'en'
+    });
+
+    placesAutocomplete.on('clear', e => {
+      const button = document.getElementById('home-search-button');
+      button.setAttribute('disabled', true);
+      button.classList.add('disabled');
     });
 
     placesAutocomplete.on('change', e => {
@@ -23,6 +30,9 @@ const initAutocomplete = () => {
       const lngField = document.getElementById("search-result-lng");
       lngField.value = selected.latlng.lng;
 
+      const button = document.getElementById('home-search-button');
+      button.removeAttribute('disabled');
+      button.classList.remove('disabled');
     });
   }
 };
