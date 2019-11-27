@@ -1,11 +1,17 @@
 <div class="form">
+  <div class="new-form-borders">
   <%= simple_form_for @question do |f| %>
-    <%= f.input :title, placeholder: 'Title', label: false %>
+    <%= f.input :title, placeholder: 'Ask for advise', label: false %>
+  </div>
+  <br>
     <div class="form-group string required question_city">
-      <%= f.input :city, placeholder: 'City', input_html: { class: 'form-control string required' } %>
+      <%= f.input :city, placeholder: 'Select your city', label: false, input_html: { class: 'places-search form-control string required' } %>
       <ul id="results"><p class='list-city-question'></p></ul>
     </div>
-    <%= f.association :category, prompt: "Select category",label: false %>
-    <%= f.button :submit, "Post Question", class: 'main-button-form'  %>
+    <br>
+    <div class="new-form-borders">
+    <%= f.association :category, prompt: "Select a category",label: false %>
+    </div>
+    <%= f.button :submit, "Post a question", class: 'main-button-form'  %>
   <% end %>
 </div>

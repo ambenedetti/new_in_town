@@ -6,19 +6,30 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <div class="new-form-borders">
     <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }, placeholder: 'Email', label: false  %>
+    </div>
+    <br>
+    <div class="new-form-borders">
     <%= f.input :password,
                 required: true,
                 input_html: { autocomplete: "new-password" }, placeholder: 'Password', label: false   %>
+    </div>
     <%= f.hint  "Make sure it's at least #{@minimum_password_length} characters", wrap_with: { tag: :span, class: :hint } %>
+    <div class="new-form-borders">
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" }, placeholder: 'Confirm password', label: false   %>
+     </div>
+     <br>
+     <div class="new-form-borders">
     <%= f.input :username, placeholder: 'Username', label: false   %>
   </div>
+  </div>
+
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up", :class => "main-button-form" %>

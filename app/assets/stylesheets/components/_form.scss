@@ -49,7 +49,7 @@
   li {
     border: solid 1px white;
     padding: 10px;
-    color: white;
+    color: $preto;
     /* width: 100%; */
     border-radius: 6px;
     margin: 10px;
@@ -59,7 +59,7 @@
   }
   a {
     text-decoration: none;
-    color: white;
+    color: $purple;
   }
   .disabled {
     color: $preto60;
@@ -152,15 +152,20 @@
   text-decoration: none;
 }
 
-.form-group {
+// change!  It is broken the tips border form
+.new-form-borders {
   border: solid 1px $preto;
   border-radius: 5px;
 }
 
 .text-muted {
-    color: #6c757d !important;
-    text-align: right;
-    margin-top: -12px;
-    margin-bottom: 20px;
+  color: #6c757d !important;
+  text-align: right;
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 0;
 }
 
