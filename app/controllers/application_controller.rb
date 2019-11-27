@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
 
   helper_method :user_votes
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   private
 
   def user_votes
