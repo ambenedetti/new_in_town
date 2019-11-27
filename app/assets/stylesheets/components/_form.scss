@@ -28,7 +28,6 @@
   width: 100%;
   min-height: 140px;
   padding: 0.375rem 0.75rem;
-  margin-bottom: 10px;
 }
 
 .new_tip {
@@ -47,9 +46,9 @@
   grid-template-columns: 1fr;
   padding: 0;
   li {
-    border: solid 1px white;
-    padding: 10px;
-    color: $preto;
+    border-bottom: solid 1px #979797;
+    padding: 1px;
+    color: #989ca0;
     /* width: 100%; */
     border-radius: 6px;
     margin: 10px;
@@ -175,3 +174,27 @@
   margin-top: 4px;
   margin-bottom: 20px;
 }
+
+.new_user_city {
+  display: flex;
+  .new-form-borders {
+    width: 70%;
+  }
+  .purple-button {
+    border-radius: 0;
+    height: 39px;
+    border: solid 3px #ca3cff;
+    width: 72px;
+  }
+}
+
+.select-fav-city {
+  border: solid 1px $preto;
+  border-radius: 5px;
+}
+
+.search-your-city {
+  width:201px;
+}
+
+

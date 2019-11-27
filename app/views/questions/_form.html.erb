@@ -1,14 +1,15 @@
+<!-- post a question form -->
 <div class="form">
-  <div class="new-form-borders">
   <%= simple_form_for @question do |f| %>
+
+
+  <div class="new-form-borders">
     <%= f.input :title, placeholder: 'Ask for advise', label: false %>
   </div>
   <br>
-    <div class="form-group string required question_city">
-      <%= f.input :city, placeholder: 'Select your city', label: false, input_html: { class: 'places-search form-control string required' } %>
-
-      <ul id="results"><p class='list-city-question'></p></ul>
-    </div>
+   <div class="new-form-borders">
+      <%= f.input :city, placeholder: 'Select your city', label: false, autocomplete: "off", input_html: { class: 'places-search form-control' } %>
+  </div>
     <br>
     <div class="new-form-borders">
     <%= f.association :category, prompt: "Select a category",label: false %>
