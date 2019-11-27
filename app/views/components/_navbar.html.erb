@@ -12,7 +12,7 @@
             <%= link_to "My tips", mytips_path, class: "dropdown-item" %>
             <%= link_to "Questions", questions_path, class: "dropdown-item" %>
             <%= link_to "Ask a question", new_question_path, class: "dropdown-item" %>
-            <a class="dropdown-item" href="#">Account</a>
+            <%= link_to "Account", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
           </div>
         </li>

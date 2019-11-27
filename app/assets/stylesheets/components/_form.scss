@@ -28,7 +28,6 @@
   width: 100%;
   min-height: 140px;
   padding: 0.375rem 0.75rem;
-  margin-bottom: 10px;
 }
 
 .new_tip {
@@ -131,6 +130,12 @@
 .sign-up-box {
   border: solid 1px #333333;
   padding: 17px;
+  border-radius: 5px;
+}
+
+.cancel-account-box {
+  border: solid 1px #333333;
+  padding: 9px;
   border-radius: 5px;
 }
 
