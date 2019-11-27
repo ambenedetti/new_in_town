@@ -1,7 +1,7 @@
 const navbar = document.querySelector(".nav");
 
 const initScroll = () => {
-  if (!navbar) {
+   if (!navbar) {
     return;
   }
 
