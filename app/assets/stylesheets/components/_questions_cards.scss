@@ -1,12 +1,26 @@
-.ignore-link a {
-  text-decoration: none;
+.ignore-link {
   color: $preto;
+  text-decoration: underline;
 }
-
+.ignored-tag {
+  color: $preto60;
+  margin-bottom: 0px;
+}
+.question-title {
+  font-size: 24px;
+  font-weight: bold;
+}
 .other-city-name {
   color: $purple;
   opacity: 0.6;
   margin-bottom: 0px;
-  margin-top: 12px;
   margin-left: 10px;
+}
+.my-question-title {
+  margin-bottom: 0px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.time-created {
+  margin-bottom: 0px;
 }

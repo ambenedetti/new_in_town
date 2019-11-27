@@ -1,6 +1,6 @@
 var containers = document.querySelectorAll(".tip_votes_<%= @tip.id %>");
 
-var votesPanel = "<%= escape_javascript(render 'components/votes', user_votes: @user_votes, tip: @tip) %>";
+var votesPanel = "<%= escape_javascript(render 'components/votes', tip: @tip) %>";
 
 containers.forEach(function(container) {
   container.innerHTML = votesPanel;

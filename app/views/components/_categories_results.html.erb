@@ -14,50 +14,32 @@
   <% end %>
 </ul>
 
-<div class="scroll">
-  <div class="scroll-left">
-    <i class="fas fa-angle-left"></i>
-  </div>
-  <div class="scroll-right arrow-active">
-    <i class="fas fa-angle-right"></i>
-  </div>
+
+<div class="scroll-left">
+  <i class="fas fa-angle-left"></i>
 </div>
+<div class="scroll-right arrow-active">
+  <i class="fas fa-angle-right"></i>
+</div>
+
 
 <div class="tab-content">
   <div class="tab-pane fade show active" id="category-all" role="tabpanel" aria-labelledby="category-all-tab">
-    <% if params[:search].present? %>
-      <% if count == 1 %>
-        <p class="results_for">1 result for <%= params[:search] %></p>
-      <%else%>
-        <p class="results_for"><%= count %> results for <%= params[:search] %></p>
-      <% end %>
-    <%else%>
-      <% if count == 1 %>
-        <p class="results_for">1 result for <%= params[:city] %></p>
-      <%else%>
-        <p class="results_for"><%= count %> results for <%= params[:city] %></p>
-      <% end %>
-    <% end %>
+    <p class="results_for">
+      <%= pluralize(count, 'result') %> for <%= params[:search].presence || params[:city] %>
+    </p>
+
     <%= render "components/tip_cards", tips: @tips %>
   </div>
 
   <% @categories.each do |category| %>
-  <% count_by_category = Tip.where(category: category).count %>
-    <div class="tab-pane fade" id="category-<%= category.id %>" role="tabpanel" aria-labelledby="category-<%= category.id %>-tab">
-  <% if params[:search].present? %>
-    <% if @count_by_category == 1 %>
-      <p class="results_for">1 result for <%= params[:search] %> + <%= category.name.capitalize %></p>
-    <%else%>
-      <p class="results_for"><%= count_by_category %> results for <%= params[:search] %> + <%= category.name.capitalize %> </p>
-    <% end %>
-  <%else%>
-    <% if @count_by_category == 1 %>
-      <p class="results_for">1 result for <%= params[:city] %> + <%= category.name.capitalize %></p>
-    <%else%>
-      <p class="results_for"><%= count_by_category %> results for <%= params[:city] %> + <%= category.name.capitalize %> </p>
-    <% end %>
-  <% end %>
-      <%= render "components/tip_cards", tips: @tips.where(category: category) %>
-    </div>
+    <% count_by_category = Tip.where(category: category).count %>
+      <div class="tab-pane fade" id="category-<%= category.id %>" role="tabpanel" aria-labelledby="category-<%= category.id %>-tab">
+        <p class="results_for">
+          <%= pluralize(count, 'result') %> for <%= params[:search].presence || params[:city] %>
+        </p>
+
+        <%= render "components/tip_cards", tips: @tips.where(category: category) %>
+      </div>
   <% end %>
 </div>

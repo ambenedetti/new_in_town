@@ -5,6 +5,7 @@
   margin-top: 18px;
   margin-bottom: 12px;
   display: -webkit-box;
+  position: relative;
 }
 .nav-tabs .nav-link.active {
   border: 0;
@@ -25,14 +26,24 @@
   margin-right: 6px;
   display: flex;
   justify-content: space-between;
+  i {
+    font-size: 20px;
+  }
 }
 .scroll-right {
   color: transparent;
+  position: absolute;
+  top: 206px;
+  right: 10px;
 }
 .scroll-left {
   color: transparent;
+  position: absolute;
+  top: 206px;
+  left: 10px;
 }
 .arrow-active {
   color: $preto60;
+  opacity: 0.6;
   font-size: 18px;
 }

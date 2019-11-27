@@ -3,9 +3,8 @@ class VotesController < ApplicationController
 
   def create
     @tip = Tip.find(params[:tip_id])
-    @user_votes = user_votes
 
-    existing = @user_votes.find_by(tip: @tip)
+    existing = user_votes.find_by(tip: @tip)
 
     if existing
       authorize existing
@@ -22,14 +21,6 @@ class VotesController < ApplicationController
   end
 
   private
-
-  def user_votes
-    if user_signed_in?
-      current_user.votes
-    else
-      Vote.where(guest: cookies[:guest])
-    end
-  end
 
   def vote_params
     params.require(:vote).permit(:direction)
