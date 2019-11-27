@@ -1,6 +1,9 @@
 const navbar = document.querySelector(".nav");
 
 const initScroll = () => {
+   if (!navbar) {
+    return;
+  }
   navbar.addEventListener("scroll", (event) => {
       console.log("test");
       const arrowRight = document.querySelector(".scroll-right");
