@@ -1,12 +1,16 @@
 const hambContainer = document.querySelector('.hamburger-container')
 
 const hamburgerMenu = () => {
+  if (!hambContainer) {
+    return;
+  }
+
+  hambContainer.addEventListener("click", hamburgerMenu);
+
   const hamburgerBars = document.querySelectorAll(".bar")
   hamburgerBars.forEach((bar) => {
     bar.classList.toggle("change");
   })
 }
-
-hambContainer.addEventListener("click", hamburgerMenu);
 
 export { hamburgerMenu };

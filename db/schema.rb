@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_144022) do
     t.bigint "category_id"
     t.string "city"
     t.bigint "user_id"
-    t.integer "status", default: 0
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_questions_on_category_id"
