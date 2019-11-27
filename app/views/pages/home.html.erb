@@ -9,7 +9,7 @@
     <h1>Feel like a local!</h1>
 
     <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
-    <%= f.input :location, label: false, input_html: { placeholder: "Madrid", id: "query-city" } %>
+    <%= f.input :location, label: false, input_html: { placeholder: "Madrid", id: "query-city", class: 'places-search' } %>
     <%= f.input :name, label: false, input_html: { placeholder: "Search for a tip", id: "query" } %>
     <%= f.submit "Search", class: "search-btn p-2 m-2" %>
 

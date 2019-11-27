@@ -1,12 +1,16 @@
 const hambContainer = document.querySelector('.hamburger-container')
 
 const hamburgerMenu = () => {
-  const hamburgerBars = document.querySelectorAll(".bar")
-  hamburgerBars.forEach((bar) => {
-    bar.classList.toggle("change");
-  })
-}
+  if (!hamburgerMenu) {
+    return;
+  }
 
-hambContainer.addEventListener("click", hamburgerMenu);
+  hambContainer.addEventListener("click", () => {
+    const hamburgerBars = document.querySelectorAll(".bar")
+    hamburgerBars.forEach(bar => {
+      bar.classList.toggle("change");
+    });
+  });
+}
 
 export { hamburgerMenu };
