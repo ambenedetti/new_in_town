@@ -1,24 +1,26 @@
+<!-- new user_city form -->
 <div class="form-container">
   <h1>Your cities</h1>
-  <p>Add cities where you could give advice on.</p>
+  <p>Add the cities where you could give advice on.</p>
   <div class="form">
-    <%= simple_form_for @user_city do |f| %>
-      <div class="new-form-borders">
-        <%= f.input :name, placeholder: 'Select a city', label: false, input_html: { class: 'places-search' }%>
+    <div class="select-fav-city">
+      <%= simple_form_for @user_city do |f| %>
+      <div class="search-your-city">
+      <%= f.input :name, placeholder: 'Select a city', label: false, input_html: { class: 'places-search' }%>
       </div>
-        <br>
       <div class="form-actions">
-        <%= f.button :submit, "Add city", class: 'purple-button' %>
+        <%= f.button :submit, "+", class: 'purple-button' %>
+      </div>
       </div>
     <% end %>
     <br>
   <% if @cities %>
-    <p>These are your cities:</p>
+
     <ul class='current-cities'>
       <% @cities.each do |city|  %>
       <li><%= city.name.split(',')[0] %>
         <%= link_to(city, method: :delete) do %>
-          <i class="fas fa-times"></i>
+          <i class="far fa-trash-alt"></i>
         <% end %>
       </li>
       <% end %>

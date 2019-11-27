@@ -10,7 +10,9 @@
 
     <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
     <%= f.input :location, label: false, input_html: { placeholder: "Madrid", id: "query-city", class: 'places-search' } %>
+    <br>
     <%= f.input :name, label: false, input_html: { placeholder: "Search for a tip", id: "query" } %>
+    <br>
     <%= f.submit "Search", class: "search-btn p-2 m-2" %>
 
     <% end %>
