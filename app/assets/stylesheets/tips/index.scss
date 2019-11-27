@@ -54,14 +54,14 @@
 
 .city-search-indicator {
   text-align: center;
-  opacity: 0.5;
-  a {
-    text-decoration: none;
+ a {
     color: $purple;
+    font-weight: 400;
+    border-radius: 2px;
     border: 1px solid $purple;
-    border-radius: 20px;
-    padding: 4px 25px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    padding: 4px 12px;
+    margin: 5px;
   }
 }
 
