@@ -12,7 +12,7 @@
             <%= link_to "My tips", mytips_path, class: "dropdown-item" %>
             <%= link_to "Questions", questions_path, class: "dropdown-item" %>
             <%= link_to "Ask a question", new_question_path, class: "dropdown-item" %>
-            <a class="dropdown-item" href="#">Account</a>
+            <%= link_to "Account", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
           </div>
         </li>
@@ -25,7 +25,7 @@
     </div>
     </button>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
+        <%= link_to "Sign in", new_user_session_path, class: "dropdown-item" %>
         <%= link_to "Register", new_user_registration_path, class: "dropdown-item" %>
     </div>
     <% end %>

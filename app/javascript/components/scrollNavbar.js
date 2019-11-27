@@ -9,7 +9,7 @@ const initScroll = () => {
 
       const arrowRight = document.querySelector(".scroll-right");
       const arrowLeft = document.querySelector(".scroll-left");
-      const scrollPosition = event.target.scrolllLeft;
+      const scrollPosition = event.target.scrollLeft;
 
         if (event.target.scrollLeft <= 40) {
           arrowLeft.classList.remove("arrow-active");
