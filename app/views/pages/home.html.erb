@@ -12,12 +12,12 @@
     <%= f.input :location, label: false, required: true, class: "text-center", input_html: { placeholder: "Madrid", id: "query-city", class: 'mb-3 places-search' } %>
     <%= f.input :name, label: false, input_html: { placeholder: "Search for a tip", id: "query" } %>
 
+
     <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
     <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
     <%= f.input :lat, as: :hidden, input_html: { id: "search-result-lat" } %>
     <%= f.input :lng, as: :hidden, input_html: { id: "search-result-lng" } %>
-    <%= f.submit "Search", class: "mt-3 search-btn" %>
-
+    <%= f.submit "Search", class: "btn mt-3 search-btn disabled", id: 'home-search-button', disabled: true %>
 
     <% end %>
     <div class="see-more">
