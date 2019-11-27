@@ -1,5 +1,6 @@
 <div class="form">
   <%= simple_form_for [@question, @tip] do |f| %>
+
     <div class="new-form-borders">
       <%= f.input :title, placeholder: 'Title', label: false %>
     </div>
@@ -7,6 +8,7 @@
     <div class="new-form-borders">
       <%= f.input :content, placeholder: "Write your tip here...", label: false, class: 'input-form-create' %>
     </div>
+    <div class="counter-new-tip"> <span id="body-count">0 characters</span><span> of 500</span></div>
       <br>
       <% if !@question.present? %>
     <div class="new-form-borders">
