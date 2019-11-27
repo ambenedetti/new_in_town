@@ -11,8 +11,6 @@ const initAutocomplete = () => {
     placesAutocomplete.on('change', e => {
       const selected = e.suggestion
 
-      console.log(selected);
-
       const cityField = document.getElementById("search-result-city");
       cityField.value = selected.name;
 

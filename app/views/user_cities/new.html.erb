@@ -8,10 +8,11 @@
       <div class="search-your-city">
       <%= f.input :name, placeholder: 'Select a city', label: false, input_html: { class: 'places-search' }%>
       </div>
+
       <div class="form-actions">
-        <%= f.button :submit, "+", class: 'purple-button' %>
+        <%= f.button :submit, "Add city", class: 'white-button' %>
       </div>
-      </div>
+    </div>
     <% end %>
     <br>
   <% if @cities %>
