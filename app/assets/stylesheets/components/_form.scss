@@ -49,7 +49,7 @@
   li {
     border: solid 1px white;
     padding: 10px;
-    color: white;
+    color: $preto;
     /* width: 100%; */
     border-radius: 6px;
     margin: 10px;
@@ -59,7 +59,7 @@
   }
   a {
     text-decoration: none;
-    color: white;
+    color: $purple;
   }
   .disabled {
     color: $preto60;
@@ -158,10 +158,14 @@
 }
 
 .text-muted {
-    color: #6c757d !important;
-    text-align: right;
-    margin-top: -12px;
-    margin-bottom: 20px;
+  color: #6c757d !important;
+  text-align: right;
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 0;
 }
 
 .counter-new-tip {
