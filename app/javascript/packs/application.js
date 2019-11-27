@@ -11,4 +11,4 @@ const button = document.querySelector(".search-btn");
 
 initAutocomplete();
 initScroll();
-
+hamburgerMenu();
