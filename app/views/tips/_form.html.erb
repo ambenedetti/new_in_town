@@ -1,19 +1,18 @@
 <div class="form">
   <%= simple_form_for [@question, @tip] do |f| %>
     <%= f.input :title, placeholder: 'Title', label: false %>
-<<<<<<< HEAD
-    <%= f.input :content, placeholder: "Write your tip here...", label: false, class: 'input-form-create character-count' %>
-    <%= f.input :city, placeholder: 'City',label: false %>
-    <%= f.association :category, prompt: "Select category",label: false %>
-=======
     <%= f.input :content, placeholder: "Write your tip here...", label: false, class: 'input-form-create' %>
 
     <% if !@question.present? %>
       <%= f.input :city, placeholder: 'City',label: false, input_html: { class: 'places-search' } %>
       <%= f.association :category, prompt: "Select category",label: false %>
+      <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
+      <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
+      <%= f.input :latitude, as: :hidden, input_html: { id: "search-result-lat" } %>
+      <%= f.input :longitude, as: :hidden, input_html: { id: "search-result-lng" } %>
     <% end %>
 
->>>>>>> master
     <%= f.button :submit, "Post Tip", class: 'main-button-form'  %>
   <% end %>
 </div>
+

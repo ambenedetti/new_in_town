@@ -11,7 +11,5 @@ const button = document.querySelector(".search-btn");
 
 initScroll();
 initAutocomplete();
-initAutocompleteQuestions();
-initAutocompleteTips();
 hamburgerMenu();
 

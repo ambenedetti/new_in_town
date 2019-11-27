@@ -1,7 +1,7 @@
 const hambContainer = document.querySelector('.hamburger-container')
 
 const hamburgerMenu = () => {
-  if (!hamburgerMenu) {
+  if (!hambContainer) {
     return;
   }
 

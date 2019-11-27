@@ -7,10 +7,13 @@ class Tip < ApplicationRecord
   has_many :reports
   validates :title, presence: true
   validates :content, presence: true, length: { maximum: 500 }
-  validates :city, presence: true
+  validates :country, presence: true
   enum status: [:accepted, :flagged, :reviewed, :hidden]
 
   algoliasearch do
-    attributes :title, :content, :city, :category, :user
+    attributes :title, :content, :city, :country
+    geoloc :latitude, :longitude
+
+    attributesForFaceting [:country]
   end
 end
