@@ -14,9 +14,8 @@
       <div class="new-form-borders mb-4">
       <%= f.input :location, placeholder: 'Select a city',label: false, input_html: { class: 'places-search' } %>
       </div>
-      <div class="new-form-borders d-flex align-items-center justify-content-between">
-        <%= f.association :category, prompt: "Select a category",label: false %>
-        <i class="down-icon pr-3 fas fa-chevron-down"></i>
+      <div class="new-form-borders">
+        <%= f.association :category, prompt: "Select a category", placeholder: 'Select a category', label: false, input_html: { class: "places-search" } %>
       </div>
       <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
       <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>

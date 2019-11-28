@@ -9,9 +9,8 @@
       <%= f.input :location, placeholder: 'Select your city', label: false, autocomplete: "off", input_html: { class: 'places-search form-control', autocomplete: 'off' } %>
     </div>
     <br>
-    <div class="new-form-borders d-flex align-items-center justify-content-between">
-      <%= f.association :category, prompt: "Select a category",label: false %>
-      <i class="ddown-icon pr-3 fas fa-chevron-down"></i>
+    <div class="new-form-borders">
+      <%= f.association :category, prompt: "Select a category", label: false %>
     </div>
 
     <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
