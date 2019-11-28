@@ -16,13 +16,14 @@
       </div>
       <div class="new-form-borders d-flex align-items-center justify-content-between">
         <%= f.association :category, prompt: "Select a category",label: false %>
-        <i class="ddown-icon pr-3 fas fa-chevron-down"></i>
+        <i class="down-icon pr-3 fas fa-chevron-down"></i>
       </div>
       <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
       <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
       <%= f.input :latitude, as: :hidden, input_html: { id: "search-result-lat" } %>
       <%= f.input :longitude, as: :hidden, input_html: { id: "search-result-lng" } %>
     <% end %>
+
      <%= image_tag('Podcast.png', class: 'podcast-dude') %>
     <%= f.button :submit, "Post your tip", class: 'main-button-form illustration-anchor'  %>
   <% end %>
