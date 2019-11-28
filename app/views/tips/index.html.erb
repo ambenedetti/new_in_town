@@ -1,6 +1,9 @@
 <div class="index-tips">
 
   <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <div class="city-search-indicator">
+      <p class="p-3 m-3 text-center">Searching in Madrid  <strong><%= link_to "Change City", root_path %></strong></p>
+    </div>
     <div class="d-flex search-index">
 
       <%= f.input :city, as: :hidden, input_html: { autocomplete: 'off', value: params[:city], id: 'search-result-city'} %>
@@ -13,10 +16,6 @@
       <%= button_tag(type: 'submit', class: "search-btn index-search-btn") do %>
         <i class="fas fa-search"></i>
       <% end %>
-    </div>
-    <div class="city-search-indicator">
-    <p>You are currently searching in <strong><%= params[:city] %></strong></p>
-    <%= link_to "change city", root_path %>
     </div>
   <% end %>
 <%= render "components/categories_results", tips: @tips, count: @count  %>

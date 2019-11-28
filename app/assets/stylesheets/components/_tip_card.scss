@@ -26,14 +26,17 @@
   opacity: 0.6;
   margin-bottom: 0px;
   margin-top: 12px;
+  font-size: 20px;
 }
 p {
   color: $preto;
 }
 .tip-index {
-  color: $preto60;
-  font-size: 24px;
-  font-weight: bold;
+    border-radius: 23px;
+    color: white;
+    padding: 0 13px;
+    background: #333333;
+    font-size: 24px;
 }
 .tip-title {
   font-size: 24px;
@@ -43,6 +46,7 @@ p {
   color: $preto80;
   font-size: 18px;
   overflow-wrap: break-word;
+  opacity: 0.7;
 }
 .bottom-card p {
   color: $preto60;
