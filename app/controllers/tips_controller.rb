@@ -24,12 +24,17 @@ class TipsController < ApplicationController
     @tip.user = current_user
     @tip.status = 0
     @question = Question.find_by(id: params[:question_id])
+
     if @question.present?
       @tip.question = @question
       @tip.category = @question.category
       @tip.city = @question.city
-      @question.answered!
+      @tip.country = @question.country
+      @tip.latitude = @question.latitude
+      @tip.longitude = @question.longitude
+
     end
+
     if filter_hateful_language
       render :new
     elsif @tip.save

@@ -46,11 +46,9 @@
   grid-template-columns: 1fr;
   padding: 0;
   li {
-    border-bottom: solid 1px #979797;
+    border-bottom: solid 1px $preto60;
     padding: 1px;
-    color: #989ca0;
-    /* width: 100%; */
-    border-radius: 6px;
+    color: $preto60;
     margin: 10px;
     display: flex;
     justify-content: space-between;

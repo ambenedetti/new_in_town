@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
     authorize @question
     @question.user = current_user
     @question.status = 0
-    user_ids = UserCity.where(name: params[:city]).pluck(&:user_id)
+    user_ids = UserCity.where(city: params[:city]).pluck(&:user_id)
     User.increment_counter(:unread_count, user_ids)
     if @question.save
       redirect_to questions_path
@@ -45,14 +45,14 @@ class QuestionsController < ApplicationController
   end
 
   def ignore
-    @question.ignored!
+    current_user.ignored_questions.create(question: @question)
     redirect_to questions_path
   end
 
 private
 
   def question_params
-    params.require(:question).permit(:city, :title, :status, :category_id, :country, :latitude, :longitud)
+    params.require(:question).permit(:city, :title, :status, :category_id, :country, :latitude, :longitude)
   end
 
   def set_question
