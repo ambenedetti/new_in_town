@@ -3,12 +3,13 @@ class TipsController < ApplicationController
 
   def index
     cookies[:guest] ||= SecureRandom.hex(10)
-    tip_ids = params[:ids]&.split(',') || []
+    tip_ids = params[:ids]&.split(',')
+
     @categories = Category.all
+
     @tips = policy_scope(Tip).includes(:votes).includes(:user)
-    @tips = @tips.where(id: tip_ids) if tip_ids.any?
+    @tips = @tips.where(id: tip_ids) #if tip_ids.any?
     @tips = @tips.order(upvote_count: :desc)
-    @count = @tips.count
   end
 
   def new
@@ -32,7 +33,6 @@ class TipsController < ApplicationController
       @tip.country = @question.country
       @tip.latitude = @question.latitude
       @tip.longitude = @question.longitude
-
     end
 
     if filter_hateful_language
@@ -71,7 +71,7 @@ class TipsController < ApplicationController
   end
 
   def filter_hateful_language
-       profanity_filter = LanguageFilter::Filter.new matchlist: :profanity
+    profanity_filter = LanguageFilter::Filter.new matchlist: :profanity
     if profanity_filter.match? @tip.content then
       flash[:alert] = "You cannot use this language"
     end

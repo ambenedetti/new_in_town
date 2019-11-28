@@ -1,32 +1,45 @@
 <div class="form-container">
 <p>Account</p>
-<h2><%= current_user.username %></h2>
+<h2 class="pt-0"><%= current_user.username %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
-<div class="form">
+<div class="form account-form">
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true, label: 'Your email' %>
-
+    <div class="mb-4">
+      <%= f.input :email, required: true, autofocus: true, label: false %>
+    </div>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                placeholder: 'New password', label: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                placeholder: 'Confrm new password', label: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "current password required to confirm changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
+    <div class="hint-password">
+      <%= f.hint  "Change Your Password"%>
+    </div>
+    <p class="mb-4" style="opacity: .5; font-size: 14px;"> Leave it blank if you don't want to change it</p>
+    <div class="mb-2">
+      <%= f.input :password,
+                  required: false,
+                  placeholder: 'New password', label: false,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+    <div class="mb-2">
+      <%= f.input :password_confirmation,
+                  required: false,
+                  placeholder: 'Confrm new password', label: false,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+    <div class="mt-4 mb-3">
+      <div class="hint-password">
+      <%= f.hint  "Please confirm your current password" %>
+    </div>
+    </div>
+      <%= f.input :current_password,
+                  required: true,
+                  placeholder: "Current password",
+                  label: false,
+                  input_html: { autocomplete: "current-password" } %>
   </div>
-<div class="cities-edit-user">
+<div class="mt-4 cities-edit-user">
   <% if @user.cities %>
     <p>These are your cities:</p>
     <ul class='current-cities d-flex justify-content-around'>
@@ -36,18 +49,15 @@
       <% end %>
     </ul>
     <% end %>
-    <%= link_to "Update cities", new_user_city_path %>
-
+    <div class="btn-purple mb-3">
+      <%= link_to "Update cities", new_user_city_path %>
+    </div>
 </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Update", class: 'main-button-form' %>
   </div>
 <% end %>
-<div class="cancel-account-box">
 
-<p>Unhappy? <%= link_to "Cancel account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => 'sign-up-text signup-purple' %></p>
-
-</div>
 </div>
 </div>

@@ -3,16 +3,11 @@
   <div class="form form-devise-sing-in">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
-        <div class="new-form-borders">
+        <div class="new-form-borders mb-3">
         <%= f.input :email,
                     required: false,
                     autofocus: true,
                     input_html: { autocomplete: "email" }, placeholder: 'Email', label: false %>
-        </div>
-        <div class="w-100 text-left d-flex">
-          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-            <%= link_to "Forgot your password?", new_password_path(resource_name), :class => "forgot-password w-100 text-right" %><br />
-          <% end %>
         </div>
         <div class="new-form-borders">
         <%= f.input :password,
@@ -25,12 +20,14 @@
           <%- if controller_name != 'sessions' %>
             <%= link_to "Sign in", new_session_path(resource_name), :class => "sign-up-text" %><br />
           <% end %>
-          <div class="sign-up-box">
+          <div class="sign-up-box mb-3">
             <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
               <p>New In Town?<%= link_to "Sign up here", new_registration_path(resource_name), :class => "sign-up-text signup-purple" %></p>
             <% end %>
           </div>
-
+           <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "Forgot your password?", new_password_path(resource_name), :class => "forgot-password w-100 text-center" %><br />
+          <% end %>
           <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
             <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
           <% end %>
@@ -46,7 +43,8 @@
           <% end %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "Sign in", class: 'main-button-form' %>
+          <%= image_tag('Selfie.png', class: 'selfie-gal') %>
+          <%= f.button :submit, "Sign in", class: 'main-button-form illustration-anchor' %>
         </div>
           <% end %>
       </div>
