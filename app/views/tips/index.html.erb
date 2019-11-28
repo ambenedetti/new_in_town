@@ -4,7 +4,7 @@
     <div class="city-search-indicator">
       <p class="p-3 m-3 text-center">
         Searching in <%= params[:city] %>
-        <%= link_to "Change City", root_path %>
+        <%= link_to "Change city", root_path %>
       </p>
     </div>
 
@@ -27,7 +27,7 @@
   <% else %>
     <%= render "components/categories_results", tips: @tips.where(category: Category.find_by(name: params[:category])) %>
   <% end %>
-                    
+
   <%= link_to "?", new_question_path, class: "global-question" %>
 
 </div>

@@ -15,7 +15,7 @@
     <div class="hint-password">
       <%= f.hint  "Change Your Password"%>
     </div>
-    <p class="mb-4" style="opacity: .5; font-size: 14px;"> Leave it blank if you dont want to change it</p>
+    <p class="mb-4" style="opacity: .5; font-size: 14px;"> Leave it blank if you don't want to change it</p>
     <div class="mb-2">
       <%= f.input :password,
                   required: false,
@@ -30,12 +30,12 @@
     </div>
     <div class="mt-4 mb-3">
       <div class="hint-password">
-      <%= f.hint  "Current password required to confirm changes" %>
+      <%= f.hint  "Please confirm your current password" %>
     </div>
     </div>
       <%= f.input :current_password,
                   required: true,
-                  placeholder: "Current Password",
+                  placeholder: "Current password",
                   label: false,
                   input_html: { autocomplete: "current-password" } %>
   </div>
