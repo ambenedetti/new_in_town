@@ -2,7 +2,7 @@
 <div class="form">
   <%= simple_form_for @question do |f| %>
     <div class="new-form-borders">
-      <%= f.input :title, placeholder: 'Ask for advice', label: false %>
+      <%= f.input :title, placeholder: 'Ask for advice', autocomplete: "off", label: false %>
     </div>
     <br>
     <div class="new-form-borders">

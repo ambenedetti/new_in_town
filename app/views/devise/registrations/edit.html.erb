@@ -25,12 +25,12 @@
     <div class="mb-2">
       <%= f.input :password_confirmation,
                   required: false,
-                  placeholder: 'Confrm new password', label: false,
+                  placeholder: 'Confirm new password', label: false,
                   input_html: { autocomplete: "new-password" } %>
     </div>
     <div class="mt-4 mb-3">
       <div class="hint-password">
-      <%= f.hint  "Please confirm your current password" %>
+      <%= f.hint  "Current password required to confirm changes" %>
     </div>
     </div>
       <%= f.input :current_password,

@@ -1,10 +1,28 @@
 // Specific CSS for your home-page
-.container-landing {
+.home-elipse {
+position: relative;
+}
+.people-carousel {
+
+}
+.container-landing-one {
   background-image: asset-url("shopping_woman.png");
   height: 320px;
   background-size: cover;
-}
 
+}
+.container-landing-two {
+  background-image: asset-url("cat_shot.png");
+  height: 320px;
+  background-size: cover;
+
+}
+.container-landing-three {
+  background-image: asset-url("video_park.png");
+  height: 320px;
+  background-size: cover;
+
+}
 .tag-line {
   color: white;
   margin-bottom: 24px;
@@ -16,7 +34,17 @@
   justify-content: center;
   align-items: center;
 }
-
+.home-title{
+  margin-top: 20px;
+}
+.home-instructions {
+  color: $purple;
+  opacity: 0.7;
+  margin-top: 36px;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
 .home-image {
   height: 340px;
   img {
@@ -28,7 +56,14 @@
     top: 22px;
   }
 }
-
+#query-city{
+  height: 42px;
+  width: 90vw;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+}
 .ap-dataset-places {
   text-align: left;
 }
@@ -58,23 +93,19 @@
     color: white;
     border: 0;
   }
-
 .center-text{
   text-align: center;
   color: $preto;
 }
-
 .intro {
   display: flex;
   justify-content: center;
 }
-
 #home-form {
   .ap-input-icon svg {
     top: 35%;
   }
 }
-
 .global-question {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   position: fixed;
@@ -93,16 +124,17 @@
     background: $purple;
   }
 }
-
 .intro-text {
   margin-top: 5px;
   margin-left: 0px;
   width: 72vw;
   justify-text: center;
 }
-
 .category-text{
   margin-bottom: 33px;
   margin-top: 12px;
   font-size: 26px;
+}
+.hidden-before-city {
+  display: none;
 }
