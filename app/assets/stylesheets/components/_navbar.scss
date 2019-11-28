@@ -7,6 +7,20 @@
   z-index: 1;
 }
 
+#questions-navbar {
+  position: relative;
+}
+#notification-questions {
+  font-size: 21px;
+  color: #CA3CFF;
+  top: 219px;
+  top: 233px;
+  border-radius: 52%;
+  right: 176px;
+  z-index: 2;
+  padding-right: 3px;
+}
+
 .navbar-home {
   color: $preto;
   justify-content: space-between;
@@ -124,4 +138,17 @@
   border-radius: 5px;
 }
 
+#questions-navbar {
+  position: relative;
+}
+#notification-questions {
+  font-size: 21px;
+  color: #CA3CFF;
+  top: 219px;
+  top: 233px;
+  border-radius: 52%;
+  right: 176px;
+  z-index: 2;
+  padding-right: 3px;
+}
 
