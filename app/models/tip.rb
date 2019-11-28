@@ -10,6 +10,8 @@ class Tip < ApplicationRecord
   validates :country, presence: true
   enum status: [:accepted, :flagged, :reviewed, :hidden]
 
+  attr_accessor :location
+
   algoliasearch do
     attributes :title, :content, :city, :country
     geoloc :latitude, :longitude

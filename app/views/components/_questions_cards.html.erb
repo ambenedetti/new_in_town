@@ -7,8 +7,6 @@
     <div class="card-tip m-3 p-2">
       <div class="question-actions d-flex justify-content-between">
         <%= link_to 'Ignore', ignore_path(question), method: :ignore, class: "ignore-link", data: { confirm: "Are you sure you want to ignore this question? You won't be able to see it later." } %>
-        <p class="ignored-tag">Ignored</p>
-
         <%= link_to 'answer', new_question_tip_path(question), class: "answer-button" %>
       </div>
       <div class="top-card d-flex justify-content-between">
