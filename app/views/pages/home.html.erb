@@ -9,8 +9,14 @@
     <h1>Feel like a local!</h1>
 
     <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
+
+    
+    
+
     <%= f.input :location, label: false, required: true, class: "text-center", input_html: { placeholder: "Select a city", id: "query-city", class: 'mb-3 places-search' } %>
+
     <%= f.input :name, label: false, input_html: { placeholder: "Search for a tip", id: "query" } %>
+     
 
 
     <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
@@ -18,12 +24,12 @@
     <%= f.input :lat, as: :hidden, input_html: { id: "search-result-lat" } %>
     <%= f.input :lng, as: :hidden, input_html: { id: "search-result-lng" } %>
     <%= f.submit "Search", class: "btn mt-3 search-btn disabled", id: 'home-search-button', disabled: true %>
+     <div class="see-more">
+      <i class="fas fa-chevron-down"></i>
+    </div>
 
     <% end %>
-    <div class="see-more">
-      <i class="fas fa-chevron-down"></i>
 
-    </div>
     <div class="container">
       <div class="categories-box">
         <p class="category-text">Browse by category</p>

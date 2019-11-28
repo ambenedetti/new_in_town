@@ -15,11 +15,12 @@
 
   <div class="new-form-borders">
     <%= f.association :category, prompt: "Select a category",label: false %>
-  </div>
-  <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
-  <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
-  <%= f.input :latitude, as: :hidden, input_html: { id: "search-result-lat" } %>
-  <%= f.input :longitude, as: :hidden, input_html: { id: "search-result-lng" } %>
-  <%= f.button :submit, "Post a question", class: 'main-button-form'  %>
+   </div>
+    <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
+    <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
+    <%= f.input :latitude, as: :hidden, input_html: { id: "search-result-lat" } %>
+    <%= f.input :longitude, as: :hidden, input_html: { id: "search-result-lng" } %>
+    <%= image_tag('doggy.png', class: 'doggy-dude') %>
+    <%= f.button :submit, "Post a question", class: 'main-button-form illustration-anchor'  %>
   <% end %>
 </div>

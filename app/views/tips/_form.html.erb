@@ -11,6 +11,7 @@
 
 
     <% if !@question.present? %>
+
       <%= f.input :location, placeholder: 'Select a city',label: false, input_html: { class: 'places-search new-form-borders' } %>
       <%= f.association :category, prompt: "Select a category",label: false, input_html: { class: "new-form-borders" } %>
       <%= f.input :country, as: :string, input_html: { id: "search-result-country" } %>
@@ -18,8 +19,8 @@
       <%= f.input :latitude, as: :string, input_html: { id: "search-result-lat" } %>
       <%= f.input :longitude, as: :string, input_html: { id: "search-result-lng" } %>
     <% end %>
-
-    <%= f.button :submit, "Post yor tip", class: 'main-button-form'  %>
+     <%= image_tag('Podcast.png', class: 'podcast-dude') %>
+    <%= f.button :submit, "Post your tip", class: 'main-button-form illustration-anchor'  %>
   <% end %>
 </div>
 
