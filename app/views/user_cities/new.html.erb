@@ -1,32 +1,31 @@
 <!-- new user_city form -->
 <div class="form-container">
   <h1>Your cities</h1>
-  <p>Add the cities where you could give advice on.</p>
+  <p>Add the cities where you could give advice on</p>
   <div class="form">
     <div class="select-fav-city">
       <%= simple_form_for @user_city do |f| %>
-      <div class="search-your-city">
-      <%= f.input :name, placeholder: 'Select a city', label: false, input_html: { class: 'places-search' }%>
-      </div>
-
-      <div class="form-actions">
-        <%= f.button :submit, "Add city", class: 'white-button' %>
-      </div>
+      <%= f.input :name, placeholder: 'Select a city', label: false, input_html: { class: 'places-search search-your-city' }%>
+      <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
+      <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
+      <%= f.input :latitude, as: :hidden, input_html: { id: "search-result-lat" } %>
+      <%= f.input :longitude, as: :hidden, input_html: { id: "search-result-lng" } %>
+      <%= f.button :submit, "Add", class: 'purple-button form-actions' %>
     </div>
     <% end %>
     <br>
-  <% if @cities %>
 
+  <% if @cities %>
     <ul class='current-cities'>
       <% @cities.each do |city|  %>
-      <li><%= city.name.split(',')[0] %>
+      <li><%= city[:city]%>
         <%= link_to(city, method: :delete) do %>
           <i class="far fa-trash-alt"></i>
         <% end %>
       </li>
       <% end %>
     </ul>
-  </div>
+    </div>
     <%= link_to questions_path do %>
       <button class="main-button-form">Done</button>
     <% end %>

@@ -39,7 +39,7 @@ class UserCitiesController < ApplicationController
 
   private
   def user_city_params
-    params.require(:user_city).permit(:name, :user_id)
+    params.require(:user_city).permit(:city, :country, :latitude, :longitude, :user_id)
   end
 
   def set_user_city

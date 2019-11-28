@@ -9,12 +9,14 @@ class User < ApplicationRecord
   has_many :reports
   has_many :votes
   has_many :cities, class_name: 'UserCity'
+  has_many :ignored_questions
 
   def city_names
-    cities.pluck(:name)
+    cities.pluck(:city)
   end
 
   def questions_to_answer
-    Question.where(city: city_names).where.not(user: self)
+    ignored = ignored_questions.pluck(:id)
+    Question.where(city: city_names).where.not(user: self).where.not(id: ignored)
   end
 end
