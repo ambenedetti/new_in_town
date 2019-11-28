@@ -1,38 +1,18 @@
 // Specific CSS for your home-page
-.home-elipse {
-position: relative;
-}
-.people-carousel {
-
-}
 .container-landing-one {
   background-image: asset-url("shopping_woman.png");
   height: 320px;
   background-size: cover;
-
 }
 .container-landing-two {
-  background-image: asset-url("cat_shot.png");
-  height: 320px;
-  background-size: cover;
-
-}
-.container-landing-three {
   background-image: asset-url("video_park.png");
   height: 320px;
   background-size: cover;
-
 }
-.tag-line {
-  color: white;
-  margin-bottom: 24px;
-  font-size: 26px;
-}
-
-.search-container{
-  display: block;
-  justify-content: center;
-  align-items: center;
+.container-landing-three {
+  background-image: asset-url("cat_shot.png");
+  height: 320px;
+  background-size: cover;
 }
 .home-title{
   margin-top: 20px;
@@ -45,6 +25,19 @@ position: relative;
   margin-left: auto;
   margin-right: auto;
 }
+.hidden-before-city{
+  display: none;
+}
+.tag-line {
+  color: white;
+  margin-bottom: 24px;
+  font-size: 26px;
+}
+.search-container{
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
 .home-image {
   height: 340px;
   img {
@@ -56,27 +49,16 @@ position: relative;
     top: 22px;
   }
 }
-#query-city{
-  height: 42px;
-  width: 90vw;
-  border-radius: 4px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 24px;
-}
 .ap-dataset-places {
   text-align: left;
 }
-
 .category-card-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-
 .card-home-section .category-card-text {
   color: #0000008a;
 }
-
 .container-landing {
   form {
     padding: 21px 20px;
@@ -131,10 +113,7 @@ position: relative;
   justify-text: center;
 }
 .category-text{
-  margin-bottom: 33px;
-  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-top: 20px;
   font-size: 26px;
-}
-.hidden-before-city {
-  display: none;
 }
