@@ -13,21 +13,23 @@
                 input_html: { autocomplete: "email" }, placeholder: 'Email', label: false  %>
     </div>
     <br>
-    <div class="new-form-borders">
+    <div class="new-form-borders mb-4">
+      <%= f.input :username, placeholder: 'Username', label: false   %>
+    </div>
+    <div class="hint">
+      <%= f.hint  "Create Password #{@minimum_password_length} characters", class: "hint" %>
+    </div>
+    <div class="new-form-borders mb-4">
     <%= f.input :password,
                 required: true,
                 input_html: { autocomplete: "new-password" }, placeholder: 'Password', label: false   %>
     </div>
-    <%= f.hint  "Make sure it's at least #{@minimum_password_length} characters", wrap_with: { tag: :span, class: :hint } %>
     <div class="new-form-borders">
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" }, placeholder: 'Confirm password', label: false   %>
      </div>
      <br>
-     <div class="new-form-borders">
-    <%= f.input :username, placeholder: 'Username', label: false   %>
-  </div>
   </div>
 
 

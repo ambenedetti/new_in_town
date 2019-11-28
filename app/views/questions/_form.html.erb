@@ -12,7 +12,7 @@
   </div>
     <br>
     <div class="new-form-borders">
-    <%= f.association :category, prompt: "Select a category",label: false %>
+    <%= f.association :category, prompt: "Select a category",label: false, class: 'category-tip'%>
     </div>
     <%= f.button :submit, "Post a question", class: 'main-button-form'  %>
   <% end %>

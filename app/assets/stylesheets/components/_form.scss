@@ -8,6 +8,7 @@
   p {
     max-width: 330px;
     color: $preto;
+    opacity: .7;
     margin: AUTO;
     text-align: center;
   }
@@ -18,10 +19,30 @@
 
 }
 
+.btn-purple {
+    background: transparent;
+    border: solid 1px #ca3cff40;
+    color: #CA3CFF;
+    padding: 10px 31px;
+    text-align: center;
+    width: 180px;
+    margin: auto;
+  a {
+    color: $purple;
+    text-decoration: 0;
+  }
+}
+
 .form-container h1, h2 {
   color: $preto;
   text-align: center;
   padding-top: 50px;
+}
+
+.hint-password {
+  small {
+    margin-bottom: 0;
+  }
 }
 
 #tip_content {
@@ -99,6 +120,10 @@
   }
 }
 
+::placeholder {
+  opacity: .5 !important;
+}
+
 .question_city {
   position: relative;
 }
@@ -115,11 +140,41 @@
   border-color: gray;
 }
 
+.account-form {
+  small {
+    text-align: center;
+    font-size: 17px;
+  }
+}
+
+.hint {
+  small {
+   text-align: center;
+   font-size: 22px;
+  }
+}
+
 .forgot-password {
   color: $purple;
   margin-bottom: 10px;
   text-decoration: none;
   font-size: 15px;
+}
+
+.cities-edit-user {
+  li {
+    border-radius: 0;
+    color: #000000;
+    font-size: 22px;
+  }
+}
+
+#new_user, #edit_user  {
+  .form-inputs {
+    input {
+      font-size: 23px;
+    }
+  }
 }
 
 .form-check-label {
@@ -128,7 +183,7 @@
 }
 
 .sign-up-box {
-  border: solid 1px #333333;
+  border: solid 1px #33333333;
   padding: 17px;
   border-radius: 5px;
 }
@@ -203,4 +258,10 @@
   width:201px;
 }
 
+.category-tip {
+  margin-top: 10px;
+}
 
+.ddown-icon {
+  opacity: .3;
+}
