@@ -123,5 +123,17 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border-radius: 5px;
 }
-
+#questions-navbar {
+  position: relative;
+}
+#notification-questions {
+  font-size: 21px;
+  color: #CA3CFF;
+  top: 219px;
+  top: 233px;
+  border-radius: 52%;
+  right: 176px;
+  z-index: 2;
+  padding-right: 3px;
+}
 
