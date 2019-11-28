@@ -2,10 +2,13 @@
 
   <%= simple_form_for :search, url: root_path, method: :get do |f| %>
     <div class="city-search-indicator">
-      <p class="p-3 m-3 text-center">Searching in Madrid  <strong><%= link_to "Change City", root_path %></strong></p>
+      <p class="p-3 m-3 text-center">
+        Searching in <%= params[:city] %>
+        <%= link_to "Change City", root_path %>
+      </p>
     </div>
-    <div class="d-flex search-index">
 
+    <div class="d-flex search-index">
       <%= f.input :city, as: :hidden, input_html: { autocomplete: 'off', value: params[:city], id: 'search-result-city'} %>
       <%= f.input :country, as: :hidden, input_html: { autocomplete: 'off', value: params[:country], id: 'search-result-country'} %>
       <%= f.input :lat, as: :hidden, input_html: { autocomplete: 'off', value: params[:lat], id: 'search-result-lat'} %>
@@ -13,10 +16,15 @@
 
       <%= f.input :search, input_html: { autocomplete: 'off', placeholder: params[:search], class: 'input-search', id: 'query' },
         label: false %>
-      <%= button_tag(type: 'submit', class: "search-btn index-search-btn") do %>
+      <%= button_tag(type: 'submit', data: { search: 'buttone' }, class: "search-btn index-search-btn") do %>
         <i class="fas fa-search"></i>
       <% end %>
     </div>
   <% end %>
-<%= render "components/categories_results", tips: @tips, count: @count  %>
+
+  <% if params[:category].blank? %>
+    <%= render "components/categories_results", tips: @tips  %>
+  <% else %>
+    <%= render "components/categories_results", tips: @tips.where(category: Category.find_by(name: params[:category])) %>
+  <% end %>
 </div>

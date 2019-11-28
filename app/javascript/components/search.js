@@ -1,9 +1,8 @@
 import algoliasearch from 'algoliasearch'
 
-const button = document.querySelector(".search-btn");
+const buttons = document.querySelectorAll("[data-search]");
 
-// Find the button
-if (button) {
+Array.from(buttons).forEach(button => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
     const searchTip = document.getElementById("query").value;
@@ -11,9 +10,18 @@ if (button) {
     const searchCountry = document.getElementById("search-result-country").value;
     const searchLat = document.getElementById("search-result-lat").value;
     const searchLng = document.getElementById("search-result-lng").value;
-    search({ searchTip, searchCity, searchCountry, searchLng, searchLat });
+    const searchCategory = button.dataset.category || '';
+
+    search({
+      searchTip,
+      searchCity,
+      searchCountry,
+      searchLng,
+      searchLat,
+      searchCategory
+    });
   });
-};
+});
 
 const search = (params = {}) => {
   const client = algoliasearch(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_SEARCH_KEY);
@@ -25,11 +33,9 @@ const search = (params = {}) => {
     filters: `country:"${params.searchCountry}"`,
     aroundLatLng: `${params.searchLat}, ${params.searchLng}`,
     aroundRadius: 50000
-
   }).then(result => {
-
     const tipIds = result.hits.map(result => result.objectID);
-    window.location.replace(`/tips?ids=${tipIds}&search=${params.searchTip}&city=${params.searchCity}&country=${params.searchCountry}&lat=${params.searchLat}&lng=${params.searchLng}`);
+    window.location.replace(`/tips?ids=${tipIds}&category=${params.searchCategory}&search=${params.searchTip}&city=${params.searchCity}&country=${params.searchCountry}&lat=${params.searchLat}&lng=${params.searchLng}`);
   })
   .catch(function searchFailure(err) {
     console.error(err);

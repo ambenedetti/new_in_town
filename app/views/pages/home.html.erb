@@ -17,21 +17,33 @@
     <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
     <%= f.input :lat, as: :hidden, input_html: { id: "search-result-lat" } %>
     <%= f.input :lng, as: :hidden, input_html: { id: "search-result-lng" } %>
-    <%= f.submit "Search", class: "btn mt-3 search-btn disabled", id: 'home-search-button', disabled: true %>
 
-    <% end %>
+    <%= f.submit "Search", class: "btn mt-3 search-btn disabled", data: { search: 'true' }, id: 'home-search-button', disabled: true %>
+
     <div class="see-more">
       <i class="fas fa-chevron-down"></i>
-
     </div>
+
     <div class="container">
       <div class="categories-box">
         <p class="category-text">Browse by Category</p>
+
         <div class="category-card-container">
-          <%= render 'components/category_card' %>
+          <%= render 'components/category_card', categories: Category.all %>
         </div>
       </div>
     </div>
+
+  <%= f.input :category, as: :hidden, input_html: { id: "search-result-category" } %>
+
+
+
+
+
+    <% end %>
+
+
+
     </div>
   </div>
 </div>
