@@ -1,19 +1,21 @@
 <!-- post a question form -->
 <div class="form">
   <%= simple_form_for @question do |f| %>
-
-
   <div class="new-form-borders">
-    <%= f.input :title, placeholder: 'Ask for advise', label: false %>
+    <%= f.input :title, placeholder: 'Ask for advice', label: false %>
   </div>
   <br>
    <div class="new-form-borders">
-      <%= f.input :city, placeholder: 'Select your city', label: false, autocomplete: "off", input_html: { class: 'places-search form-control' } %>
+      <%= f.input :location, placeholder: 'Select your city', label: false, autocomplete: "off", input_html: { class: 'places-search form-control' } %>
   </div>
-    <br>
-    <div class="new-form-borders">
-    <%= f.association :category, prompt: "Select a category",label: false %>
-    </div>
-    <%= f.button :submit, "Post a question", class: 'main-button-form'  %>
+  <br>
+  <div class="new-form-borders">
+  <%= f.association :category, prompt: "Select a category",label: false %>
+  </div>
+  <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
+  <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
+  <%= f.input :lat, as: :hidden, input_html: { id: "search-result-lat" } %>
+  <%= f.input :lng, as: :hidden, input_html: { id: "search-result-lng" } %>
+  <%= f.button :submit, "Post a question", class: 'main-button-form'  %>
   <% end %>
 </div>

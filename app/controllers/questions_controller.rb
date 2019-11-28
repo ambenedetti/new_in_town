@@ -57,7 +57,7 @@ class QuestionsController < ApplicationController
 private
 
   def question_params
-    params.require(:question).permit(:city, :title, :status, :category_id)
+    params.require(:question).permit(:city, :title, :status, :category_id, :country, :lat, :lng)
   end
 
   def set_question

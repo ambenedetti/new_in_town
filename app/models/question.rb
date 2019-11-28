@@ -6,4 +6,5 @@ class Question < ApplicationRecord
   validates :category, presence: true
   has_many :tips
   enum status: [:open, :ignored, :seen, :answered]
+  attr_accessor :location
 end

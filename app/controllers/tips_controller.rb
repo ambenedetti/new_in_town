@@ -3,12 +3,11 @@ class TipsController < ApplicationController
 
   def index
     cookies[:guest] ||= SecureRandom.hex(10)
-    tip_ids = params[:ids]&.split(',')
+    tip_ids = params[:ids]&.split(',') || []
     @categories = Category.all
     @tips = policy_scope(Tip).includes(:votes).includes(:user)
-    @tips = @tips.where(id: tip_ids) #if tip_ids.any?
+    @tips = @tips.where(id: tip_ids) if tip_ids.any?
     @tips = @tips.order(upvote_count: :desc)
-
     @count = @tips.count
   end
 
@@ -76,7 +75,7 @@ class TipsController < ApplicationController
 private
 
   def tip_params
-    params.require(:tip).permit(:content, :city, :title, :latitude, :longitude, :status, :category_id, :country)
+    params.require(:tip).permit(:content, :city, :title, :latitude, :longitude, :status, :category_id)
   end
 
   def set_tip
