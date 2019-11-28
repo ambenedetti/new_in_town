@@ -4,7 +4,7 @@
 
 
   <div class="new-form-borders">
-    <%= f.input :title, placeholder: 'Ask for advise', label: false %>
+    <%= f.input :title, placeholder: 'Ask for advice', label: false %>
   </div>
   <br>
    <div class="new-form-borders">
@@ -14,6 +14,7 @@
     <div class="new-form-borders">
     <%= f.association :category, prompt: "Select a category",label: false %>
     </div>
-    <%= f.button :submit, "Post a question", class: 'main-button-form'  %>
+    <%= image_tag('doggy.png', class: 'doggy-dude') %>
+    <%= f.button :submit, "Post a question", class: 'main-button-form illustration-anchor'  %>
   <% end %>
 </div>
