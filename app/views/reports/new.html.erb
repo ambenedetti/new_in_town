@@ -5,8 +5,8 @@
 
   <div class="form">
     <%= simple_form_for [@tip, @report] do |f| %>
-      <%= f.input :description, label: false, autocomplete: "off", input_html: { class: 'new-form-borders  mb-4' } %>
-      <%= f.association :reason, label: false, input_html: { class: 'new-form-borders d-flex align-items-center justify-content-between' } %>
+      <%= f.input :description, label: false, placeholder: "Describe your concern", autocomplete: "off", input_html: { class: 'new-form-borders  mb-4' } %>
+      <%= f.association :reason, label: false, prompt: "Select a reason", placeholder: "Select reason", input_html: { class: 'new-form-borders' } %>
       <%= f.button :submit, class: 'main-button-form illustration-anchor' %>
     <% end %>
   </div>
