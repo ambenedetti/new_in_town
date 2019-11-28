@@ -6,8 +6,8 @@
         <p class="tip-index"><%= index + 1 %></p>
         <%= render 'components/votes', tip: tip %>
       </div>
-      <p class="tip-title"><%= tip.title %></p>
-      <p class="m-1 tip-content"><%= tip.content %></p>
+      <p class="mt-3 tip-title"><%= tip.title %></p>
+      <p class="mb-4 tip-content"><%= tip.content %></p>
       <p class="city-name"><%= tip.city %></p>
       <div class="bottom-card d-flex justify-content-between">
         <p>by <strong><%= tip.user.username %></strong> | <%= time_ago_in_words(tip.created_at)%> ago</p>
@@ -24,6 +24,6 @@
     </div>
   <% end %>
 <% else %>
-  <div>No results for <%= params[:search] %> in this category</div>
+  <div class="mt-4 no-result">No results for <span><%= params[:search] %></span> in this category</div>
 <% end %>
 

@@ -11,15 +11,19 @@
 
 
     <% if !@question.present? %>
-      <%= f.input :location, placeholder: 'Select a city',label: false, input_html: { class: 'places-search new-form-borders' } %>
-      <%= f.association :category, prompt: "Select a category",label: false, input_html: { class: "new-form-borders" } %>
-      <%= f.input :country, as: :string, input_html: { id: "search-result-country" } %>
-      <%= f.input :city, as: :string, input_html: { id: "search-result-city" } %>
-      <%= f.input :latitude, as: :string, input_html: { id: "search-result-lat" } %>
-      <%= f.input :longitude, as: :string, input_html: { id: "search-result-lng" } %>
-    <% end %>
 
-    <%= f.button :submit, "Post yor tip", class: 'main-button-form'  %>
+      <%= f.input :location, placeholder: 'Select a city',label: false, input_html: { class: 'places-search new-form-borders mb-4' } %>
+      <div class="new-form-borders d-flex align-items-center justify-content-between">
+        <%= f.association :category, prompt: "Select a category",label: false %>
+        <i class="ddown-icon pr-3 fas fa-chevron-down"></i>
+      </div>
+      <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
+      <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
+      <%= f.input :latitude, as: :hidden, input_html: { id: "search-result-lat" } %>
+      <%= f.input :longitude, as: :hidden, input_html: { id: "search-result-lng" } %>
+    <% end %>
+     <%= image_tag('Podcast.png', class: 'podcast-dude') %>
+    <%= f.button :submit, "Post your tip", class: 'main-button-form illustration-anchor'  %>
   <% end %>
 </div>
 
