@@ -11,8 +11,9 @@
 
 
     <% if !@question.present? %>
-
-      <%= f.input :location, placeholder: 'Select a city',label: false, input_html: { class: 'places-search new-form-borders mb-4' } %>
+      <div class="new-form-borders mb-4">
+      <%= f.input :location, placeholder: 'Select a city',label: false, input_html: { class: 'places-search' } %>
+      </div>
       <div class="new-form-borders d-flex align-items-center justify-content-between">
         <%= f.association :category, prompt: "Select a category",label: false %>
         <i class="ddown-icon pr-3 fas fa-chevron-down"></i>
