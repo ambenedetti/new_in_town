@@ -80,7 +80,7 @@ class TipsController < ApplicationController
 private
 
   def tip_params
-    params.require(:tip).permit(:content, :city, :title, :country, :latitude, :longitude, :status, :category_id)
+    params.require(:tip).permit(:content, :city, :title, :latitude, :longitude, :status, :category_id, :country)
   end
 
   def set_tip
