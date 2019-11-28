@@ -17,10 +17,13 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     authorize @question
+
     @question.user = current_user
     @question.status = 0
-    user_ids = UserCity.where(city: params[:city]).pluck(&:user_id)
+
+    user_ids = UserCity.where(city: question_params[:city]).pluck(&:user_id)
     User.increment_counter(:unread_count, user_ids)
+
     if @question.save
       redirect_to questions_path
     else

@@ -6,11 +6,17 @@
     <% if user_signed_in? %>
         <li class="nav-item dropdown">
         <%= button_tag current_user.username[0], class: "user_navbar avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <i class="fas fa-times"></i>
+          <i class="fas fa-times"></i>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Post a tip", new_tip_path, class: "dropdown-item" %>
             <%= link_to "My tips", mytips_path, class: "dropdown-item" %>
-            <%= link_to "Questions", questions_path, class: "dropdown-item" %>
+            <div id="questions-navbar">
+              <%= link_to "Questions", questions_path, class: "dropdown-item" %>
+              <% if current_user.unread_count.positive? %>
+                <i id="notification-questions" class="fas fa-bell">
+                </i>
+              <% end %>
+            </div>
             <%= link_to "Ask a question", new_question_path, class: "dropdown-item" %>
             <%= link_to "Account", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
@@ -29,8 +35,6 @@
         <%= link_to "Register", new_user_registration_path, class: "dropdown-item" %>
     </div>
     <% end %>
-  </div>
-<!--Navbar-->
-
+</div>
 
 
