@@ -10,7 +10,8 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Post a tip", new_tip_path, class: "dropdown-item" %>
             <%= link_to "My tips", mytips_path, class: "dropdown-item" %>
-             <div id="questions-navbar">
+
+            <div id="questions-navbar">
               <%= link_to "Questions", questions_path, class: "dropdown-item" %>
               <% if current_user.unread_count > 0 %>
                 <i id="notification-questions" class="fas fa-bell">
