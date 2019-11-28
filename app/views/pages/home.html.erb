@@ -7,11 +7,9 @@
       <%= image_tag "Ellipse.png" %>
     </div>
     <h1>Feel like a local!</h1>
+    <div id="home-form">
 
     <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
-
-    
-    
 
     <%= f.input :location, label: false, required: true, class: "text-center", input_html: { placeholder: "Select a city", id: "query-city", class: 'mb-3 places-search' } %>
 
@@ -27,7 +25,6 @@
      <div class="see-more">
       <i class="fas fa-chevron-down"></i>
     </div>
-
     <% end %>
 
     <div class="container">

@@ -16,12 +16,12 @@
 }
 
 .index-search-btn {
-  background: linear-gradient(180deg, #CB3DFB 0%, #8100AC 100%);
   border-radius: 0px 4px 4px 0px;
   border-width: 0px;
   height: 40px;
   width: 40px;
-  color: white;
+  background: #ca3cff;
+  color: white
 }
 .nav{
   flex-wrap: nowrap;
@@ -39,6 +39,18 @@
   color: $purple;
 }
 
+.no-result {
+  color: $preto60;
+  text-align: center;
+  max-width: 80%;
+  margin: auto;
+  font-size: 25px;
+  span {
+    color: $preto;
+    font-weight: bold;
+  }
+}
+
 .nav-item a {
   color: $preto60;
   font-weight: bold;
@@ -48,8 +60,12 @@
 }
 .results_for {
   margin-left: 20px;
-
   color: $preto60;
+  text-align: center;
+  padding: 15px;
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .city-search-indicator {

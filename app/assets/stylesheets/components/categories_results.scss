@@ -35,17 +35,23 @@
 .scroll-right {
   color: transparent;
   position: absolute;
-  top: 206px;
-  right: 10px;
+  top: 248px;
+  right: 0;
+  padding: 7px 20px;
+  background: linear-gradient(-89deg, #ffffff, #ffffff5e);
 }
 .scroll-left {
   color: transparent;
   position: absolute;
-  top: 206px;
-  left: 10px;
+  top: 248px;
+  left: 0px;
+  &.arrow-active {
+   padding: 7px 20px;
+   background: linear-gradient(90deg, #ffffff, #ffffff5e);
+  }
 }
 .arrow-active {
-  color: $preto60;
-  opacity: 0.6;
+  color: $preto;
+  opacity: 1;
   font-size: 18px;
 }
