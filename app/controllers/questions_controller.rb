@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_question, only: [:show, :edit, :update, :ignore]
 
   def index
     current_user.update(unread_count: 0)
@@ -18,7 +19,7 @@ class QuestionsController < ApplicationController
     authorize @question
     @question.user = current_user
     @question.status = 0
-    user_ids = UserCity.where(name: params[:city]).pluck(&:user_id)
+    user_ids = UserCity.where(city: params[:city]).pluck(&:user_id)
     User.increment_counter(:unread_count, user_ids)
     if @question.save
       redirect_to questions_path
@@ -27,16 +28,11 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def show
-    set_question
-  end
+  def show; end
 
-  def edit
-    set_question
-  end
+  def edit; end
 
   def update
-    set_question
     respond_to do |format|
       if @question.update(question_params)
         format.html { redirect_to questions_path, notice: "#{@question.title} was successfully updated." }
@@ -49,15 +45,14 @@ class QuestionsController < ApplicationController
   end
 
   def ignore
-    set_question
-    @question.ignored!
+    current_user.ignored_questions.create(question: @question)
     redirect_to questions_path
   end
 
 private
 
   def question_params
-    params.require(:question).permit(:city, :title, :status, :category_id)
+    params.require(:question).permit(:city, :title, :status, :category_id, :country, :latitude, :longitude)
   end
 
   def set_question

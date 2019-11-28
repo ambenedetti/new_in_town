@@ -9,11 +9,6 @@ const initAutocomplete = () => {
       language: 'en'
     });
 
-    placesAutocomplete.on('clear', e => {
-      const button = document.getElementById('home-search-button');
-      button.setAttribute('disabled', true);
-      button.classList.add('disabled');
-    });
 
     placesAutocomplete.on('change', e => {
       const selected = e.suggestion
@@ -30,9 +25,24 @@ const initAutocomplete = () => {
       const lngField = document.getElementById("search-result-lng");
       lngField.value = selected.latlng.lng;
 
+    });
+
+    placesAutocomplete.on('change', e => {
       const button = document.getElementById('home-search-button');
+      if (!button) {
+        return;
+      }
       button.removeAttribute('disabled');
       button.classList.remove('disabled');
+    });
+
+    placesAutocomplete.on('clear', e => {
+      const button = document.getElementById('home-search-button');
+      if (!button) {
+        return;
+      }
+      button.setAttribute('disabled', true);
+      button.classList.add('disabled');
     });
   }
 };
