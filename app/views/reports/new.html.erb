@@ -1,6 +1,13 @@
 <!-- new.html.erb -->
-<%= simple_form_for [@tip, @report] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :reason %>
-  <%= f.button :submit %>
-<% end %>
+<div class="form-container">
+  <h1>Report a tip</h1>
+  <p>We take this very seriously, please let us know what you found offensive</p>
+
+  <div class="form">
+    <%= simple_form_for [@tip, @report] do |f| %>
+      <%= f.input :description, label: false, autocomplete: "off", input_html: { class: 'new-form-borders  mb-4' } %>
+      <%= f.association :reason, label: false, input_html: { class: 'new-form-borders d-flex align-items-center justify-content-between' } %>
+      <%= f.button :submit, class: 'main-button-form illustration-anchor' %>
+    <% end %>
+  </div>
+</div>

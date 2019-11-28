@@ -4,8 +4,12 @@
   right: 14px;
   z-index: 1000;
 }
-
 .alert-info {
+  color: $purple;
+  background-color: white;
+  border-color: $purple;
+}
+.alert-dark {
   color: $purple;
   background-color: white;
   border-color: $purple;
