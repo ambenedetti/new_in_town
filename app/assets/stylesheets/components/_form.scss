@@ -62,6 +62,7 @@
 
 .current-cities {
   list-style: none;
+  font-size: 22px;
   display: grid;
   text-align: center;
   grid-template-columns: 1fr;
@@ -166,8 +167,22 @@
     font-size: 22px;
   }
 }
+#new_question, #new_tip, .new_user_city  {
+  input, select {
+    font-size: 23px;
+  }
+}
 
-#new_user, #edit_user  {
+.ignore-link {
+  border: solid 1px grey;
+  padding: 2px 27px;
+  color: #333333a1;
+  cursor: progress;
+  text-decoration: none;
+  border-radius: 43px;
+}
+
+#new_user, #edit_user{
   .form-inputs {
     input {
       font-size: 23px;
@@ -241,7 +256,7 @@
   }
   .purple-button {
     border-radius: 0;
-    height: 39px;
+    height: 49px;
     border: solid 3px #ca3cff;
     width: 72px;
   }

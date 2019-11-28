@@ -75,6 +75,25 @@
   }
 }
 
+.global-question {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  background: #212529;
+  text-decoration: none;
+  font-size: 31px;
+  border: solid 7px white;
+  padding: 13px 28px;
+  border-radius: 63px;
+  &:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+    background: $purple;
+  }
+}
+
 .intro-text {
   margin-top: 5px;
   margin-left: 0px;

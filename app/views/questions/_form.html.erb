@@ -9,13 +9,11 @@
       <%= f.input :location, placeholder: 'Select your city', label: false, autocomplete: "off", input_html: { class: 'places-search form-control' } %>
     </div>
     <br>
-    <div class="new-form-borders">
-        <%= f.input :city, placeholder: 'Select your city', label: false, autocomplete: "off", input_html: { class: 'places-search form-control' } %>
+    <div class="new-form-borders d-flex align-items-center justify-content-between">
+      <%= f.association :category, prompt: "Select a category",label: false %>
+      <i class="ddown-icon pr-3 fas fa-chevron-down"></i>
     </div>
-    <br>
-    <div class="new-form-borders">
-      <%= f.association :category, prompt: "Select a category",label: false, class: 'category-tip'%>
-    </div>
+
     <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
     <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
     <%= f.input :latitude, as: :hidden, input_html: { id: "search-result-lat" } %>
