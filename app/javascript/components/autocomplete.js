@@ -32,8 +32,10 @@ const initAutocomplete = () => {
       if (!button) {
         return;
       }
+      const afterCitySelection = document.getElementById('after-city-selection');
       button.removeAttribute('disabled');
       button.classList.remove('disabled');
+      afterCitySelection.classList.remove("hidden-before-city");
     });
 
     placesAutocomplete.on('clear', e => {
@@ -41,8 +43,10 @@ const initAutocomplete = () => {
       if (!button) {
         return;
       }
+      const afterCitySelection = document.getElementById('after-city-selection');
       button.setAttribute('disabled', true);
       button.classList.add('disabled');
+      afterCitySelection.classList.add("hidden-before-city");
     });
   }
 };

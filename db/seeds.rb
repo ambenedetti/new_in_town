@@ -33,7 +33,7 @@ end
 puts 'Creating categories'
 puts '------------------'
 
-categories = ["Culture", "Transportation", "Food", "Going out", "Work", "Sports", "Sex & relationships", "Pets", "Utilities", "Children"]
+categories = ["Culture", "Transportation", "Food", "Going out", "Work", "Sports", "Sex and relationships", "Pets", "Utilities", "Children"]
 categories.each_with_index do |category, index|
   cat = Category.create!(name: category, image:"icon-#{index}.svg")
   puts "- #{cat.name}"
@@ -102,7 +102,7 @@ if Rails.env.development?
     latitude: 40.416775,
     status: 0,
     user: user1,
-    category: Category.where(name: "Sex & relationships")[0]
+    category: Category.where(name: "Sex and relationships")[0]
     )
 
   puts "+ #{tip.title}"
