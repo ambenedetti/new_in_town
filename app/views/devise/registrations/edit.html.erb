@@ -31,7 +31,7 @@
     <p>These are your cities:</p>
     <ul class='current-cities d-flex justify-content-around'>
       <% @user.cities.each do |city|  %>
-      <li><%= city.name.split(',')[0] %>
+      <li><%= city.city %>
       </li>
       <% end %>
     </ul>
