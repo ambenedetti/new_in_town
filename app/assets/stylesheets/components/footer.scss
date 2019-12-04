@@ -1,0 +1,22 @@
+// footer.scss
+
+html,body { height: 100%;  margin: 0; }
+
+body {
+  display: table;
+  width: 100%;
+}
+
+footer {
+  margin: 0px;
+  padding-top: 10px;
+  display: table-row;
+  height: 40px;
+  // background-color: $purple;
+  background-image: linear-gradient( $purple, #7f0ea6);
+  width: 100%;
+  align-items: center;
+  p {
+    color: white;
+  }
+}

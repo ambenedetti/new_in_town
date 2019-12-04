@@ -1,10 +1,4 @@
-<div class="container-landing">
-  <div class="search-container p-2">
-    <div class="center-text">
-      <div class="intro">
-      </div>
-
-
+<div class="search-container p-2 container-landing center-text">
   <div id="carouselExampleSlidesOnly" class="carousel slide people-carousel" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -17,49 +11,40 @@
           <div class="d-block w-100 container-landing-three"></div>
         </div>
         <div class="home-image home-elipse">
-      <%= image_tag "Ellipse.png" %>
-    </div>
-    </div>
-    </div>
-    <h1 class="home-title">Feel like a local!</h1>
-    <h4 class="home-instructions">Choose your location to get started</h4>
+        <%= image_tag "Ellipse.png" %>
+        </div>
+      </div>
+  </div>
 
-    <div id="home-form">
+  <h1 class="home-title">Feel like a local!</h1>
+  <h4 class="home-instructions">Choose your location to get started</h4>
+
+  <div id="home-form">
     <%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
       <%= f.input :location, label: false, required: true, class: "text-center", input_html: { placeholder: "Select a city", id: "query-city", class: 'mb-3 places-search' } %>
 
       <div id="after-city-selection" class="hidden-before-city">
-        <div class="see-more">
-          <i class="fas fa-chevron-down"></i>
-        </div>
+        <i class="fas fa-chevron-down see-more"></i>
+
         <p class="category-text">Search by keyword</p>
-      <%= f.input :name, label: false, input_html: { placeholder: "Search for a tip", id: "query" } %>
+        <%= f.input :name, label: false, input_html: { placeholder: "Search for a tip", id: "query" } %>
+        <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
+        <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
+        <%= f.input :lat, as: :hidden, input_html: { id: "search-result-lat" } %>
+        <%= f.input :lng, as: :hidden, input_html: { id: "search-result-lng" } %>
+        <%= f.submit "Search", class: "btn mt-3 search-btn disabled", data: { search: 'true' }, id: 'home-search-button', disabled: true %>
+        <%= f.input :category, as: :hidden, input_html: { id: "search-result-category" } %>
+        <% end %>
 
-      <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
-      <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
-      <%= f.input :lat, as: :hidden, input_html: { id: "search-result-lat" } %>
-      <%= f.input :lng, as: :hidden, input_html: { id: "search-result-lng" } %>
-      <%= f.submit "Search", class: "btn mt-3 search-btn disabled", data: { search: 'true' }, id: 'home-search-button', disabled: true %>
-      <%= f.input :category, as: :hidden, input_html: { id: "search-result-category" } %>
-    <% end %>
-
-
-    <div class="container">
-      <div class="categories-box">
-        <p class="category-text">Or search by category</p>
-        <div class="category-card-container">
-          <%= render 'components/category_card', categories: Category.all %>
+        <div class="container">
+          <div class="categories-box">
+            <p class="category-text">Or search by category</p>
+            <div class="category-card-container">
+              <%= render 'components/category_card', categories: Category.all %>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
+  </div>
 </div>
-
-
-
-
-
-
-
-
 
