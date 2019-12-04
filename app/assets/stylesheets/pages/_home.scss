@@ -1,18 +1,46 @@
 // Specific CSS for your home-page
-.container-landing-one {
-  background-image: asset-url("shopping_woman.png");
-  height: 320px;
-  background-size: cover;
+
+@media screen and (max-width: 1280px) {
+  .container-landing-one {
+    background-image: asset-url("shopping_woman.png");
+    height: 320px;
+    background-size: cover;
+  }
+  .container-landing-two {
+    background-image: asset-url("video_park.png");
+    height: 320px;
+    background-size: cover;
+  }
+  .container-landing-three {
+    background-image: asset-url("cat_shot.png");
+    height: 320px;
+    background-size: cover;
+  }
+
+
 }
-.container-landing-two {
-  background-image: asset-url("video_park.png");
-  height: 320px;
-  background-size: cover;
+
+@media (max-width: 1025px) {
+
+
+
 }
-.container-landing-three {
-  background-image: asset-url("cat_shot.png");
-  height: 320px;
-  background-size: cover;
+
+
+.search-container{
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+.container-landing {
+
+  input {
+    font-size: 23px;
+  }
+}
+.center-text{
+  text-align: center;
+  color: $preto;
 }
 .home-title{
   margin-top: 20px;
@@ -32,11 +60,6 @@
   color: white;
   margin-bottom: 24px;
   font-size: 26px;
-}
-.search-container{
-  display: block;
-  justify-content: center;
-  align-items: center;
 }
 .home-image {
   height: 340px;
@@ -59,14 +82,6 @@
 .card-home-section .category-card-text {
   color: #0000008a;
 }
-.container-landing {
-  form {
-    padding: 21px 20px;
-  }
-  input {
-    font-size: 23px;
-  }
-}
   .search-btn {
     width: 100%;
     border-radius: 4px;
@@ -75,37 +90,20 @@
     color: white;
     border: 0;
   }
-.center-text{
-  text-align: center;
-  color: $preto;
-}
 .intro {
   display: flex;
   justify-content: center;
 }
 #home-form {
+  padding: 21px 20px;
   .ap-input-icon svg {
     top: 35%;
   }
-}
-.global-question {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  position: fixed;
-  bottom: 72px;
-  right: 20px;
-  color: white;
-  background-color: $preto80;
-  text-decoration: none;
-  font-size: 16px;
-  border: solid 5px white;
-  padding: 6px 24px;
-  border-radius: 70px;
-  &:hover {
-    transform: scale(1.1);
-    text-decoration: none;
-    background: $purple;
+  input {
+    font-size: 23px;
   }
 }
+
 .intro-text {
   margin-top: 5px;
   margin-left: 0px;

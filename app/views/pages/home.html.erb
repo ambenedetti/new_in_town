@@ -37,11 +37,9 @@
         <% end %>
 
         <div class="container">
-          <div class="categories-box">
-            <p class="category-text">Or search by category</p>
-            <div class="category-card-container">
-              <%= render 'components/category_card', categories: Category.all %>
-            </div>
+          <p class="category-text">Or search by category</p>
+          <div class="category-card-container">
+            <%= render 'components/category_card', categories: Category.all %>
           </div>
         </div>
       </div>
