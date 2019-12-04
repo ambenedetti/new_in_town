@@ -28,6 +28,5 @@
     <%= render "components/categories_results", tips: @tips.where(category: Category.find_by(name: params[:category])) %>
   <% end %>
 
-  <%= link_to "?", new_question_path, class: "global-question" %>
-
+  <%= link_to "Can't find a tip?", new_question_path, class: "global-question" %>
 </div>
