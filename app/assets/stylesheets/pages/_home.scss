@@ -32,6 +32,15 @@
     margin-left: auto;
     margin-right: auto;
   }
+#home-form {
+  padding: 21px 20px;
+  .ap-input-icon svg {
+    top: 35%;
+  }
+  input {
+    font-size: 23px;
+  }
+}
   .category-card-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -66,7 +75,7 @@
   }
   .search-container{
     align-items: center;
-    height: 460px;
+    height: 425px;
     background: white;
   }
   .fa-chevron-down {
@@ -76,6 +85,9 @@
     display: block;
     font-size: 46px;
     color: $purple;
+    position: absolute;
+    top: 209px;
+    left: 631px;
   }
   .tag-line {
     justify-content: left;
@@ -86,45 +98,87 @@
     color: $purple;
     font-size: 56px;
     text-align: left;
-    margin: 36px auto 86px 21px;
+    margin: 36px auto 86px 0px;
   }
   .home-instructions {
     color: $purple;
     opacity: 0.7;
     margin-bottom: 0px;
+    text-align: left;
   }
   .hidden-before-city {
-    width: 50%;
+    display: grid;
+    grid-template-columns: 20% 70%;
   }
   .places-search {
     width: 430px;
+    margin-left: 0px;
+    padding-left: 0px;
   }
-  .home-form {
-    padding: 0px;
-    margin: 0px;
-  }
+  #home-form {
+    padding: 21px 0px;
+    .ap-input-icon svg {
+      right: 180px;
+      top: 35%;
+    }
+    input {
+      font-size: 23px;
+    }
+}
   .panel-principal{
-    display: flex;
+    display: grid;
+    grid-template-columns: 50% 50%;
   }
   .keyword-categories-panel {
     display: block;
+    width: 400px;
   }
   .category-card-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
   }
   .category-small {
     display: none;
   }
   .categories-carousel {
+    width: 200px;
     display: block;
-    background: linear-gradient(179.98deg, $purple 0.06%, #67008A 99.95%);
-    border-radius: 4px;
+    background-image: linear-gradient(to left, $purple, #7f0ea6);
+    color: white;
+    border-radius: 10px;
+    min-height: 134px;
+    justify-content: center;
+    align-items: center;
+    padding: 13px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    margin: 0px 100px;
+    img{
+      width: 50px;
+      margin-bottom: 12px;
+    }
+    p {
+      flex-grow: 1;
+    }
+  }
+  a .category-carousel-information {
+    color: white;
+    text-decoration: none;
+
   }
   .home-help {
     display: flex;
     background: linear-gradient(179.98deg, $purple 0.06%, #67008A 99.95%);
     justify-content: space-around;
+    p {
+      color: white;
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+  .image-three {
+    position: absolute;
+    bottom: 0px;
   }
 }
 
@@ -169,15 +223,7 @@
   display: flex;
   justify-content: center;
 }
-#home-form {
-  padding: 21px 20px;
-  .ap-input-icon svg {
-    top: 35%;
-  }
-  input {
-    font-size: 23px;
-  }
-}
+
 .intro-text {
   margin-top: 5px;
   margin-left: 0px;
