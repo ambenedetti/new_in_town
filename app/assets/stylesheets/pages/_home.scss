@@ -36,9 +36,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-  .home-help {
-    display: none;
-  }
   .fa-chevron-right{
     display: none;
   }
@@ -52,6 +49,9 @@
     display: block;
   }
   .category-large {
+    display: none;
+  }
+  .home-help {
     display: none;
   }
 }
@@ -116,6 +116,10 @@
   }
   .category-small {
     display: none;
+  }
+  .home-help {
+    display: flex;
+    justify-content: space-around;
   }
 }
 
