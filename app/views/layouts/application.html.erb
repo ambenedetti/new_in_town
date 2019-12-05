@@ -30,6 +30,7 @@
     <%= render 'components/navbar' %>
     <%= render 'components/flashes' %>
     <%= yield %>
+    <%= render 'components/footer' unless @no_footer %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

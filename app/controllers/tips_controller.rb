@@ -17,6 +17,7 @@ class TipsController < ApplicationController
     authorize @tip
 
     @question = Question.find_by(id: params[:question_id])
+    @no_footer = true
   end
 
   def create
@@ -47,6 +48,7 @@ class TipsController < ApplicationController
 
   def edit
     set_tip
+    @no_footer = true
   end
 
   def update

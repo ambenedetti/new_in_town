@@ -1,6 +1,28 @@
-.index-tips {
+
+@media screen and (max-width: 1200px) {
+  .index-tips {
+  width: 100vw;
   justify-content: center;
+  }
 }
+
+@media screen and (min-device-width: 1200px)  {
+  .index-container {
+    display: flex;
+    justify-content: center;
+  }
+  .index-tips {
+    width: 80%;
+    justify-content: center;
+  }
+  .scroll-left {
+    display: none;
+  }
+  .scroll-right {
+    display: none;
+  }
+}
+
 #query-city {
   color: $preto60;
 }
@@ -80,4 +102,21 @@
     margin: 5px;
   }
 }
-
+.global-question {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  bottom: 72px;
+  right: 20px;
+  color: white;
+  background-color: $preto80;
+  text-decoration: none;
+  font-size: 16px;
+  border: solid 5px white;
+  padding: 6px 24px;
+  border-radius: 70px;
+  &:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+    background: $purple;
+  }
+}

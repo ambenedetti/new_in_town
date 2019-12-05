@@ -1,0 +1,17 @@
+@media screen and (max-width: 1200px) {
+  .index-questions {
+  width: 100vw;
+  justify-content: center;
+  }
+}
+
+@media screen and (min-device-width: 1200px)  {
+  .index-container {
+    display: flex;
+    justify-content: center;
+  }
+  .index-questions {
+    width: 80%;
+    justify-content: center;
+  }
+}

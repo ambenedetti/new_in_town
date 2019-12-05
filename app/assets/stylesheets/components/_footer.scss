@@ -1,0 +1,25 @@
+// footer.scss
+
+html,body { height: 100%;  margin: 0; }
+
+body {
+  display: table;
+  width: 100vw;
+}
+
+footer {
+  display: flex;
+  margin: 0px;
+  width: 100vw;
+  padding-top: 12px;
+  display: table-row;
+  height: 60px;
+  background-color: $preto;
+  align-items: center;
+  justify-content: center;
+  p {
+    color: white;
+    margin-bottom: 0px;
+    margin-top: 20px;
+  }
+}

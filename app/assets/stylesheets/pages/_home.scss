@@ -1,42 +1,197 @@
 // Specific CSS for your home-page
-.container-landing-one {
-  background-image: asset-url("shopping_woman.png");
-  height: 320px;
-  background-size: cover;
+
+@media screen and (max-width: 1200px) {
+  .search-container{
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+  .container-landing-one {
+    background-image: asset-url("shopping_woman.png");
+    height: 320px;
+    background-size: cover;
+  }
+  .container-landing-two {
+    background-image: asset-url("video_park.png");
+    height: 320px;
+    background-size: cover;
+  }
+  .container-landing-three {
+    background-image: asset-url("cat_shot.png");
+    height: 320px;
+    background-size: cover;
+  }
+  .home-title{
+    margin-top: 20px;
+  }
+  .home-instructions {
+    color: $purple;
+    opacity: 0.7;
+    margin-top: 36px;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+#home-form {
+  padding: 21px 20px;
+  .ap-input-icon svg {
+    top: 35%;
+  }
+  input {
+    font-size: 23px;
+  }
 }
-.container-landing-two {
-  background-image: asset-url("video_park.png");
-  height: 320px;
-  background-size: cover;
+  .category-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .fa-chevron-right{
+    display: none;
+  }
+  .tag-line {
+    justify-content: center;
+  }
+  .home-title {
+    color: $preto;
+  }
+  .panel-principal{
+    display: block;
+  }
+  .category-large {
+    display: none;
+  }
+  .home-help {
+    display: none;
+  }
+  .categories-carousel {
+    display: none;
+  }
 }
-.container-landing-three {
-  background-image: asset-url("cat_shot.png");
-  height: 320px;
-  background-size: cover;
+
+
+@media screen and (min-device-width: 1200px)  {
+  #carouselExampleSlidesOnly {
+    display: none;
+  }
+  .search-container{
+    align-items: center;
+    height: 425px;
+    background: white;
+  }
+  .fa-chevron-down {
+    display: none;
+  }
+  .fa-chevron-right {
+    display: block;
+    font-size: 46px;
+    color: $purple;
+    position: absolute;
+    top: 209px;
+    left: 631px;
+  }
+  .tag-line {
+    justify-content: left;
+    margin-bottom: 0px;
+    margin-left: 24px;
+  }
+  .home-title {
+    color: $purple;
+    font-size: 56px;
+    text-align: left;
+    margin: 36px auto 86px 0px;
+  }
+  .home-instructions {
+    color: $purple;
+    opacity: 0.7;
+    margin-bottom: 0px;
+    text-align: left;
+  }
+  .hidden-before-city {
+    display: grid;
+    grid-template-columns: 20% 70%;
+  }
+  .places-search {
+    width: 430px;
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+  #home-form {
+    padding: 21px 0px;
+    .ap-input-icon svg {
+      right: 180px;
+      top: 35%;
+    }
+    input {
+      font-size: 23px;
+    }
 }
-.home-title{
-  margin-top: 20px;
+  .panel-principal{
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  .keyword-categories-panel {
+    display: block;
+    width: 400px;
+  }
+  .category-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+  }
+  .category-small {
+    display: none;
+  }
+  .categories-carousel {
+    width: 200px;
+    display: block;
+    background-image: linear-gradient(to left, $purple, #7f0ea6);
+    color: white;
+    border-radius: 10px;
+    min-height: 134px;
+    justify-content: center;
+    align-items: center;
+    padding: 13px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    margin: 0px 100px;
+    img{
+      width: 50px;
+      margin-bottom: 12px;
+    }
+    p {
+      flex-grow: 1;
+    }
+  }
+  a .category-carousel-information {
+    color: white;
+    text-decoration: none;
+
+  }
+  .home-help {
+    display: flex;
+    background: linear-gradient(179.98deg, $purple 0.06%, #67008A 99.95%);
+    justify-content: space-around;
+    p {
+      color: white;
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+  .image-three {
+    position: absolute;
+    bottom: 0px;
+  }
 }
-.home-instructions {
-  color: $purple;
-  opacity: 0.7;
-  margin-top: 36px;
-  width: 80vw;
-  margin-left: auto;
-  margin-right: auto;
+
+.center-text{
+  text-align: center;
+  color: $preto;
 }
 .hidden-before-city{
   display: none;
 }
 .tag-line {
-  color: white;
   margin-bottom: 24px;
   font-size: 26px;
-}
-.search-container{
-  display: block;
-  justify-content: center;
-  align-items: center;
 }
 .home-image {
   height: 340px;
@@ -52,20 +207,9 @@
 .ap-dataset-places {
   text-align: left;
 }
-.category-card-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
+
 .card-home-section .category-card-text {
   color: #0000008a;
-}
-.container-landing {
-  form {
-    padding: 21px 20px;
-  }
-  input {
-    font-size: 23px;
-  }
 }
   .search-btn {
     width: 100%;
@@ -75,37 +219,11 @@
     color: white;
     border: 0;
   }
-.center-text{
-  text-align: center;
-  color: $preto;
-}
 .intro {
   display: flex;
   justify-content: center;
 }
-#home-form {
-  .ap-input-icon svg {
-    top: 35%;
-  }
-}
-.global-question {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  color: white;
-  background: #212529;
-  text-decoration: none;
-  font-size: 31px;
-  border: solid 7px white;
-  padding: 13px 28px;
-  border-radius: 63px;
-  &:hover {
-    transform: scale(1.1);
-    text-decoration: none;
-    background: $purple;
-  }
-}
+
 .intro-text {
   margin-top: 5px;
   margin-left: 0px;

@@ -15,6 +15,7 @@ class UserCitiesController < ApplicationController
     end
     @user_city = UserCity.new
     authorize @user_city
+    @no_footer = true
   end
 
   def create
