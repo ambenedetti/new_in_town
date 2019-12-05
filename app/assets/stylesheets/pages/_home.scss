@@ -1,6 +1,11 @@
 // Specific CSS for your home-page
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1200px) {
+  .search-container{
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
   .container-landing-one {
     background-image: asset-url("shopping_woman.png");
     height: 320px;
@@ -16,48 +21,112 @@
     height: 320px;
     background-size: cover;
   }
-
-
-}
-
-@media (max-width: 1025px) {
-
-
-
-}
-
-
-.search-container{
-  display: block;
-  justify-content: center;
-  align-items: center;
-}
-.container-landing {
-
-  input {
-    font-size: 23px;
+  .home-title{
+    margin-top: 20px;
+  }
+  .home-instructions {
+    color: $purple;
+    opacity: 0.7;
+    margin-top: 36px;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .category-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .home-help {
+    display: none;
+  }
+  .fa-chevron-right{
+    display: none;
+  }
+  .tag-line {
+    justify-content: center;
+  }
+  .home-title {
+    color: $preto;
+  }
+  .panel-principal{
+    display: block;
+  }
+  .category-large {
+    display: none;
   }
 }
+
+
+
+@media screen and (min-device-width: 1200px)  {
+  #carouselExampleSlidesOnly {
+    display: none;
+  }
+  .search-container{
+    align-items: center;
+    height: 460px;
+    background: linear-gradient(179.98deg, $purple 0.06%, #67008A 99.95%);
+  }
+  .fa-chevron-down {
+    display: none;
+  }
+  .fa-chevron-right {
+    font-size: 46px;
+    color: white;
+
+  }
+  .tag-line {
+    justify-content: left;
+    margin-bottom: 0px;
+    margin-left: 24px;
+
+  }
+  .home-title {
+    color: white;
+    font-size: 56px;
+    text-align: left;
+
+    margin: 36px auto 86px 21px;
+  }
+  .home-instructions {
+    color: white;
+    opacity: 0.8;
+    margin-bottom: 0px;
+  }
+  .hidden-before-city {
+    width: 50%;
+  }
+  .places-search {
+    width: 430px;
+  }
+  .home-form {
+    padding: 0px;
+    margin: 0px;
+  }
+  .panel-principal{
+    display: flex;
+  }
+  .keyword-categories-panel {
+    display: block;
+  }
+
+  .category-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .category-small {
+    display: none;
+  }
+}
+
 .center-text{
   text-align: center;
   color: $preto;
-}
-.home-title{
-  margin-top: 20px;
-}
-.home-instructions {
-  color: $purple;
-  opacity: 0.7;
-  margin-top: 36px;
-  width: 80vw;
-  margin-left: auto;
-  margin-right: auto;
 }
 .hidden-before-city{
   display: none;
 }
 .tag-line {
-  color: white;
   margin-bottom: 24px;
   font-size: 26px;
 }
@@ -71,14 +140,12 @@
     z-index: -2;
     top: 22px;
   }
+
 }
 .ap-dataset-places {
   text-align: left;
 }
-.category-card-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
+
 .card-home-section .category-card-text {
   color: #0000008a;
 }
@@ -103,7 +170,6 @@
     font-size: 23px;
   }
 }
-
 .intro-text {
   margin-top: 5px;
   margin-left: 0px;
