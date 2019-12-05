@@ -3,6 +3,7 @@ class ReportsController < ApplicationController
     @report = Report.new
     authorize @report
     @tip = Tip.find(params[:tip_id])
+    @no_footer = true
   end
 
   def create

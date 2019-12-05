@@ -12,6 +12,7 @@ class QuestionsController < ApplicationController
   def new
     @question = Question.new
     authorize @question
+    @no_footer = true
   end
 
   def create
