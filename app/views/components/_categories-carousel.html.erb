@@ -1,0 +1,26 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <% Category.all.count.times do |index| %>
+      <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
+    <% end %>
+  </ol>
+  <div class="carousel-inner">
+    <% Category.all.each do |category| %>
+      <% if category == Category.first %>
+        <div class="carousel-item active">
+          <div>
+            <%= image_tag category.image %><br>
+            <%= category.name %>
+          </div>
+        </div>
+      <% else %>
+        <div class="carousel-item">
+          <div>
+            <%= image_tag category.image %><br>
+            <%= category.name %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

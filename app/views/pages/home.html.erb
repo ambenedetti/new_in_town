@@ -44,18 +44,28 @@
           <%= f.input :name, label: false, input_html: { placeholder: "Search for a tip", id: "query" } %>
           <%= f.submit "Search", class: "btn mt-3 search-btn disabled", data: { search: 'true' }, id: 'home-search-button', disabled: true %>
           <% end %>
-
-          <div class="container category-small">
-            <p class="category-text">Or search by category</p>
-            <div class="category-card-container">
-              <%= render 'components/category_card', categories: Category.all %>
+          <p class="category-text">Or search by category</p>
+          <div class="categories-carousel">
+            <%= render 'components/categories-carousel' %>
+          </div>
+          <div class="category-small">
+            <div class="container">
+              <div class="categories-box">
+                <div class="category-card-container">
+                  <%= render 'components/category_card', categories: Category.all %>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
+
       </div>
-    </div>
 
   </div>
+
+</div>
+
 
   <div class="home-help">
     <div class="image-one">
