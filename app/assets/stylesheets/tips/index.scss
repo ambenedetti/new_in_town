@@ -1,7 +1,28 @@
-.index-tips {
+
+@media screen and (max-width: 1200px) {
+  .index-tips {
   width: 100vw;
   justify-content: center;
+  }
 }
+
+@media screen and (min-device-width: 1200px)  {
+  .index-container {
+    display: flex;
+    justify-content: center;
+  }
+  .index-tips {
+    width: 80%;
+    justify-content: center;
+  }
+  .scroll-left {
+    display: none;
+  }
+  .scroll-right {
+    display: none;
+  }
+}
+
 #query-city {
   color: $preto60;
 }
