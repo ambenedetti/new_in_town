@@ -9,15 +9,27 @@
   background-color: transparent;
   border: 2px solid $purple;
 }
-
-.main-button-form {
-  width: 100%;
-  height: 72px;
-  color: white;
-  background-color: $purple;
-  position: fixed;
-  left: 0;
-  bottom: 0;
+@media screen and (max-width: 1200px) {
+  .main-button-form {
+    width: 100%;
+    height: 72px;
+    color: white;
+    background-color: $purple;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+}
+@media screen and (min-device-width: 1200px)  {
+  .main-button-form {
+    width: 40%;
+    height: 72px;
+    color: white;
+    background-color: $purple;
+  }
+  .illustration-form {
+    display: none;
+  }
 }
 
 .main-button-form:hover {

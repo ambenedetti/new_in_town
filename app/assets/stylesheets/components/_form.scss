@@ -1,5 +1,21 @@
-.form {
-  padding: 30px 50px;
+@media screen and (max-width: 1200px) {
+  .form {
+    padding: 30px 50px;
+  }
+}
+@media screen and (min-device-width: 1200px) {
+  .form-container-desktop {
+    display: flex;
+    justify-content: center;
+  }
+  .form {
+    width: 80%;
+    justify-content: center;
+    padding: 30px 50px;
+  }
+  .main-button-form {
+    width: 100%;
+  }
 }
 .form-container {
   min-height: 100vh;
