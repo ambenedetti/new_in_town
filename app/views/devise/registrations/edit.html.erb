@@ -1,64 +1,65 @@
-<% @no_footer = true %>
-<div class="form-container">
-<p>Account</p>
-<h2 class="pt-0"><%= current_user.username %></h2>
+<div class="form-container-desktop">
+  <% @no_footer = true %>
+  <div class="form-container">
+    <p>Account</p>
+    <h2 class="pt-0"><%= current_user.username %></h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-<div class="form account-form">
-  <div class="form-inputs">
-    <div class="mb-4">
-      <%= f.input :email, required: true, autofocus: true, label: false %>
-    </div>
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+    <div class="form account-form">
+      <div class="form-inputs">
+        <div class="mb-4">
+          <%= f.input :email, required: true, autofocus: true, label: false %>
+        </div>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+        <div class="hint-password">
+          <%= f.hint  "Change Your Password"%>
+        </div>
+        <p class="mb-4" style="opacity: .5; font-size: 14px;"> Leave it blank if you don't want to change it</p>
+        <div class="mb-2">
+          <%= f.input :password,
+                      required: false,
+                      placeholder: 'New password', label: false,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+        <div class="mb-2">
+          <%= f.input :password_confirmation,
+                      required: false,
+                      placeholder: 'Confirm new password', label: false,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+        <div class="mt-4 mb-3">
+          <div class="hint-password">
+          <%= f.hint  "Current password required to confirm changes" %>
+          </div>
+        </div>
+          <%= f.input :current_password,
+                      required: true,
+                      placeholder: "Current password",
+                      label: false,
+                      input_html: { autocomplete: "current-password" } %>
+      </div>
+      <div class="mt-4 cities-edit-user">
+        <% if @user.cities %>
+          <p>These are your cities:</p>
+          <ul class='current-cities d-flex justify-content-around'>
+            <% @user.cities.each do |city|  %>
+              <li><%= city.city %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+        <div class="btn-purple mb-3">
+          <%= link_to "Update cities", new_user_city_path %>
+        </div>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, "Update", class: 'main-button-form' %>
+      </div>
     <% end %>
-    <div class="hint-password">
-      <%= f.hint  "Change Your Password"%>
-    </div>
-    <p class="mb-4" style="opacity: .5; font-size: 14px;"> Leave it blank if you don't want to change it</p>
-    <div class="mb-2">
-      <%= f.input :password,
-                  required: false,
-                  placeholder: 'New password', label: false,
-                  input_html: { autocomplete: "new-password" } %>
-    </div>
-    <div class="mb-2">
-      <%= f.input :password_confirmation,
-                  required: false,
-                  placeholder: 'Confirm new password', label: false,
-                  input_html: { autocomplete: "new-password" } %>
-    </div>
-    <div class="mt-4 mb-3">
-      <div class="hint-password">
-      <%= f.hint  "Current password required to confirm changes" %>
-    </div>
-    </div>
-      <%= f.input :current_password,
-                  required: true,
-                  placeholder: "Current password",
-                  label: false,
-                  input_html: { autocomplete: "current-password" } %>
-  </div>
-<div class="mt-4 cities-edit-user">
-  <% if @user.cities %>
-    <p>These are your cities:</p>
-    <ul class='current-cities d-flex justify-content-around'>
-      <% @user.cities.each do |city|  %>
-      <li><%= city.city %>
-      </li>
-      <% end %>
-    </ul>
-    <% end %>
-    <div class="btn-purple mb-3">
-      <%= link_to "Update cities", new_user_city_path %>
-    </div>
-</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update", class: 'main-button-form' %>
+    </div>
   </div>
-<% end %>
-
-</div>
 </div>
