@@ -1,25 +1,27 @@
 <!-- post a question form -->
-<div class="form">
-  <%= simple_form_for @question do |f| %>
-    <div class="new-form-borders">
-      <%= f.input :title, placeholder: 'Ask for advice', autocomplete: "off", label: false %>
-    </div>
-    <br>
-    <div class="new-form-borders">
-      <%= f.input :location, placeholder: 'Select your city', label: false, autocomplete: "off", input_html: { class: 'places-search form-control', autocomplete: 'off' } %>
-    </div>
-    <br>
-    <div class="new-form-borders">
-      <%= f.association :category, prompt: "Select a category", label: false %>
-    </div>
+<div class="form-container-desktop">
+  <div class="form">
+    <%= simple_form_for @question do |f| %>
+      <div class="new-form-borders">
+        <%= f.input :title, placeholder: 'Ask for advice', autocomplete: "off", label: false %>
+      </div>
+      <br>
+      <div class="new-form-borders">
+        <%= f.input :location, placeholder: 'Select your city', label: false, autocomplete: "off", input_html: { class: 'places-search form-control', autocomplete: 'off' } %>
+      </div>
+      <br>
+      <div class="new-form-borders">
+        <%= f.association :category, prompt: "Select a category", label: false %>
+      </div>
 
-    <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
-    <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
-    <%= f.input :latitude, as: :hidden, input_html: { id: "search-result-lat" } %>
-    <%= f.input :longitude, as: :hidden, input_html: { id: "search-result-lng" } %>
+      <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
+      <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
+      <%= f.input :latitude, as: :hidden, input_html: { id: "search-result-lat" } %>
+      <%= f.input :longitude, as: :hidden, input_html: { id: "search-result-lng" } %>
 
-    <%= image_tag('doggy.png', class: 'doggy-dude') %>
-    <%= f.button :submit, "Post a question", class: 'main-button-form illustration-anchor'  %>
+      <%= f.button :submit, "Post a question", class: 'main-button-form illustration-anchor'  %>
+      <%= image_tag('doggy.png', class: ' illustration-form doggy-dude') %>
 
-  <% end %>
+    <% end %>
+  </div>
 </div>

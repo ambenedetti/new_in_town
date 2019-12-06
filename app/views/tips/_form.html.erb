@@ -1,30 +1,31 @@
-<div class="form">
-  <%= simple_form_for [@question, @tip] do |f| %>
-  <div class="new-form-borders">
-      <%= f.input :title, placeholder: 'Title', label: false, autocomplete: "off" %>
-    </div>
-      <br>
+<div class="form-container-desktop">
+  <div class="form">
+    <%= simple_form_for [@question, @tip] do |f| %>
     <div class="new-form-borders">
-      <%= f.input :content, placeholder: "Write your tip here...", label: false, autocomplete: "off", class: 'input-form-create' %>
-    </div>
-  <div class="counter-new-tip"> <span id="body-count">0 characters</span><span> of 500</span></div>
-
-
-    <% if !@question.present? %>
-      <div class="new-form-borders mb-4">
-      <%= f.input :location, placeholder: 'Select a city',label: false, input_html: { class: 'places-search' } %>
+        <%= f.input :title, placeholder: 'Title', label: false, autocomplete: "off" %>
       </div>
+        <br>
       <div class="new-form-borders">
-        <%= f.association :category, prompt: "Select a category", placeholder: 'Select a category', label: false, input_html: { class: "places-search" } %>
+        <%= f.input :content, placeholder: "Write your tip here...", label: false, autocomplete: "off", class: 'input-form-create' %>
       </div>
-      <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
-      <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
-      <%= f.input :latitude, as: :hidden, input_html: { id: "search-result-lat" } %>
-      <%= f.input :longitude, as: :hidden, input_html: { id: "search-result-lng" } %>
+    <div class="counter-new-tip"> <span id="body-count">0 characters</span><span> of 500</span></div>
+
+
+      <% if !@question.present? %>
+        <div class="new-form-borders mb-4">
+        <%= f.input :location, placeholder: 'Select a city',label: false, input_html: { class: 'places-search' } %>
+        </div>
+        <div class="new-form-borders">
+          <%= f.association :category, prompt: "Select a category", placeholder: 'Select a category', label: false, input_html: { class: "places-search" } %>
+        </div>
+        <%= f.input :country, as: :hidden, input_html: { id: "search-result-country" } %>
+        <%= f.input :city, as: :hidden, input_html: { id: "search-result-city" } %>
+        <%= f.input :latitude, as: :hidden, input_html: { id: "search-result-lat" } %>
+        <%= f.input :longitude, as: :hidden, input_html: { id: "search-result-lng" } %>
+      <% end %>
+
+       <%= image_tag('Podcast.png', class: 'podcast-dude') %>
+      <%= f.button :submit, "Post your tip", class: 'main-button-form illustration-anchor'  %>
     <% end %>
-
-     <%= image_tag('Podcast.png', class: 'podcast-dude') %>
-    <%= f.button :submit, "Post your tip", class: 'main-button-form illustration-anchor'  %>
-  <% end %>
+  </div>
 </div>
-
