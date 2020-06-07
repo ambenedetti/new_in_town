@@ -5,7 +5,7 @@
     "@rails/webpacker": "^4.2.0",
     "algoliasearch": "^3.35.1",
     "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "places.js": "^1.17.1",
     "popper.js": "^1.16.0",
     "scrollreveal": "^4.0.5"
